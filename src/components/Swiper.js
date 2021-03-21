@@ -1,6 +1,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectFade,
+  Scrollbar,
+  Autoplay,
+  A11y,
+} from 'swiper';
 import styled from 'styled-components';
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
@@ -12,13 +19,17 @@ import homeSlider3 from '../img/sliderimgs/homeSliderImg3L.jpg';
 import homeSlider4 from '../img/sliderimgs/homeSliderImg4L.jpg';
 import { siteData } from '../SiteData';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 
 const Slider = () => {
   const imgs = [homeSlider1, homeSlider2, homeSlider3, homeSlider4];
+
   return (
     <Swiper
       spaceBetween={0}
+      effect="fade"
+      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      loop
       slidesPerView={1}
       navigation={{ clickable: true }}
       pagination={{ clickable: true }}
@@ -27,7 +38,17 @@ const Slider = () => {
     >
       {siteData.slider.map((item, i) => (
         <SwiperSlide>
-          <img key={i} src={imgs[i]} alt="" style={{ width: '100%' }} />
+          <div className="slide-container">
+            <img key={i} src={imgs[i]} alt="" style={{ width: '100%' }} />
+            <div className="slide-heading-and-button">
+              <h3>{item.header}</h3>
+              <h2>
+                {item.title}
+                <br />
+                {item.subtitle}
+              </h2>
+            </div>
+          </div>
         </SwiperSlide>
       ))}
       ...

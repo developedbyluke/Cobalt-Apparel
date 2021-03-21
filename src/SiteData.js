@@ -2,19 +2,27 @@ export const siteData = {
   slider: [
     {
       img: 'homeSlider1',
-      title: 'Latest Footwear',
+      header: 'Latest Footwear',
+      title: 'Nike SB Janoski',
+      subtitle: 'Aquamarine',
     },
     {
       img: '../img/sliderimgs/homeSliderImg2L.jpg',
-      title: 'Latest Footwear',
+      header: 'Latest Footwear',
+      title: 'Adidas 3MC Shoes',
+      subtitle: 'Chalk White',
     },
     {
       img: '../img/sliderimgs/homeSliderImg3L.jpg',
-      title: 'Latest Footwear',
+      header: 'New Brand',
+      title: 'Wayward London',
+      subtitle: '',
     },
     {
       img: '../img/sliderimgs/homeSliderImg4L.jpg',
-      title: 'Latest Footwear',
+      header: 'Sale',
+      title: "Summer '20",
+      subtitle: 'Clearance',
     },
   ],
 };
