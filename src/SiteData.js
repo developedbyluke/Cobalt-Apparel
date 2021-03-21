@@ -15,8 +15,8 @@ export const siteData = {
     {
       img: '../img/sliderimgs/homeSliderImg3L.jpg',
       header: 'New Brand',
-      title: 'Wayward London',
-      subtitle: '',
+      title: 'Wayward Axle',
+      subtitle: 'LDN',
     },
     {
       img: '../img/sliderimgs/homeSliderImg4L.jpg',

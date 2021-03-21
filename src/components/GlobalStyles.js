@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-// font-family: 'Caveat', cursive;
-// font-family: 'Roboto', sans-serif;
 const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
@@ -9,18 +7,23 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
-body{ 
+body{
     /* background-color: #111111; */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 button{
-    font-weight: bold;
-    font-size: 1.1rem;
 
+    border: none;
+    outline: none;
+    width: 8rem;
+    height: 2rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
     &:hover{
-        background-color: #23d997;
-        color: #1b1b1b;
+        background-color: #02e1f5;
+        cursor: pointer;
     }
 }
 h2{
@@ -28,7 +31,8 @@ h2{
     font-size: 4rem;
 }
 h3{
-    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
 h4{
     font-weight: bold;
