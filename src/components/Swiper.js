@@ -1,7 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, EffectFade, Autoplay } from 'swiper';
-import styled from 'styled-components';
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
 import '../styles/swiperStyles.scss';
@@ -25,11 +24,11 @@ const Slider = () => {
       loop
       slidesPerView={1}
       pagination={{ clickable: true }}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {siteData.slider.map((item, i) => (
-        <SwiperSlide>
+        <SwiperSlide key={i}>
           <div className="slide-container">
             <img key={i} src={imgs[i]} alt="" style={{ width: '100%' }} />
             <figcaption className="slide-heading-and-button">

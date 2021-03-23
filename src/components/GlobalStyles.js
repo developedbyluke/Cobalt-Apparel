@@ -39,8 +39,7 @@ h4{
     font-size: 2rem;
 }
 span{
-    font-weight: bold;
-    color: #23d997;
+    
 }
 a{
     font-size: 1.1rem;

@@ -1,10 +1,12 @@
 import React from 'react';
 import Slider from '../components/Swiper';
 
-const Home = () => (
-  <div>
-    <Slider />
-  </div>
-);
+const Home = () => {
+  return (
+    <div>
+      <Slider/>
+    </div>
+  );
+};
 
 export default Home;
