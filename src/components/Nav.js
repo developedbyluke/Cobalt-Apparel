@@ -3,21 +3,24 @@ import styled from 'styled-components';
 import { ReactComponent as NavTriangle } from '../img/navTriangle.svg';
 
 const Nav = ({navData}) => {
-  
   const [navItemSelected, updateNavItemSelected] = useState('brands');
-  const brands = navData.filter(i => i.id === navItemSelected);
-  console.log(brands[0].listItems);
-  
+  const [isNavActive, updateIsNavActive] = useState(false); 
   const TriangleRef = useRef();
+  const subNavRef = useRef();
   
   const hoverNav = (e) => {
     const navElementOffset = e.currentTarget.offsetLeft + (e.currentTarget.offsetWidth / 2);  
     TriangleRef.current.style.left = `${navElementOffset}px`;
     TriangleRef.current.style.opacity = '1';
-    console.log(navData);
+    updateNavItemSelected(e.currentTarget.id);
+    updateIsNavActive(true);
   }
-  const hoverExitNav = () => {
-    TriangleRef.current.style.opacity = '0';
+  const hoverExitNav = (e ) => {
+    const subNavRect = subNavRef.current.getBoundingClientRect();
+    if (subNavRect.top - e.pageY > 2) {
+      updateIsNavActive(false)
+      TriangleRef.current.style.opacity = '0';
+    } 
   }
 
   return (
@@ -56,24 +59,26 @@ const Nav = ({navData}) => {
         <span className="material-icons">shopping_cart</span>
       </div>
     </NavButtons>
-    <SubNav headingData={navData.filter(i => i.id === navItemSelected)[0]}/>
+    <SubNav TriangleRef={TriangleRef} updateIsNavActive={updateIsNavActive} ref={subNavRef} isNavActive={isNavActive} headingData={navData.filter(i => i.id === navItemSelected)[0]}/>
   </Header>
 )};
 
 
 
-const SubNav = ({headingData}) => {
-  const hello = 'hello'
+const SubNav = React.forwardRef(({headingData, isNavActive, updateIsNavActive, TriangleRef}, ref) => {
+  const subNavMouseLeave = (e) => {
+    updateIsNavActive(false)
+    TriangleRef.current.style.opacity = '0';
+}
   if(!headingData) return;
-  console.log(headingData);
 return (
-  <StyledSubNav>
+  <StyledSubNav onMouseLeave={subNavMouseLeave} className={isNavActive ? 'show-nav' : 'hide-nav'} ref={ref}>
     <div className="header">{headingData.id}</div>
     <div className="list">{headingData.listItems}</div>
     <div className="button">button</div>
   </StyledSubNav>
 )
-};
+});
 
 
 const Header = styled.header`
@@ -88,6 +93,19 @@ const Header = styled.header`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  .hide-nav{
+  height: 0;
+transition: all 0.5s ease;
+
+  *{
+    display: none;
+  }
+}
+.show-nav{
+  height: auto;
+transition: all 0.5s ease;
+
+}
 
   nav{
     position: relative;
@@ -97,7 +115,7 @@ const Header = styled.header`
       opacity: 0;
       transform: translateX(-50%);
       pointer-events: none;
-      transition: all 0.1s ease-out;
+      transition: all 0.1s ease;
     }
   }
 
