@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 body{
     /* background-color: #111111; */
     font-family: 'Poppins', sans-serif;
+    overscroll-behavior: none;
 }
 
 button{

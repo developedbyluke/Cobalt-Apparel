@@ -13,7 +13,7 @@ import { siteData } from '../SiteData';
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);
 
-const Slider = () => {
+const Slider = ({sliderData}) => {
   const imgs = [homeSlider1, homeSlider2, homeSlider3, homeSlider4];
 
   return (
@@ -27,7 +27,7 @@ const Slider = () => {
       // onSlideChange={() => console.log('slide change')}
       // onSwiper={(swiper) => console.log(swiper)}
     >
-      {siteData.slider.map((item, i) => (
+      {sliderData.map((item, i) => (
         <SwiperSlide key={i}>
           <div className="slide-container">
             <img key={i} src={imgs[i]} alt="" style={{ width: '100%' }} />

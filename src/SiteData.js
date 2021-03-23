@@ -1,4 +1,26 @@
 export const siteData = {
+  nav: [
+    {
+      id: 'brands',
+      listItems: ['Adidas', 'Nike SB', 'Carhart']
+    },
+    {
+      id: 'shoes',
+      listItems: ['Adidas', 'Nike SB', 'Carhart']
+    },
+    {
+      id: 'clothing',
+      listItems: ['Adidas', 'Nike SB', 'Carhart']
+    },
+    {
+      id: 'accessories',
+      listItems: ['Adidas', 'Nike SB', 'Carhart']
+    },
+    {
+      id: 'sale',
+      listItems: ['Adidas', 'Nike SB', 'Carhart']
+    }
+  ],
   slider: [
     {
       img: 'homeSlider1',
