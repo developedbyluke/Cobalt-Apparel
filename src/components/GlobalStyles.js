@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -6,6 +6,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+
+/* html{
+    font-size: 16px;
+} */
 
 body{
     /* background-color: #111111; */
@@ -45,7 +49,7 @@ span{
 a{
     font-size: 1.1rem;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 p{
     padding: 3rem 0rem;
