@@ -4,10 +4,13 @@ import Nav from "../components/Nav";
 import SearchBar from "../components/SearchBar";
 import SubNav from "../components/SubNav";
 import "../styles/headerToggleClasses.scss";
+import Cart from "./Cart";
 
 const Header = ({ navData }) => {
   const [navItemSelected, updateNavItemSelected] = useState("brands");
   const [isNavActive, updateIsNavActive] = useState(false);
+  const [isSearchBarActive, updateIsSearchBarActive] = useState(false);
+  const [isCartActive, updateIsCartActive] = useState(false);
   const TriangleRef = useRef();
   const SubNavRef = useRef();
   return (
@@ -23,17 +26,40 @@ const Header = ({ navData }) => {
         updateIsNavActive={updateIsNavActive}
       />
       <NavButtons>
+        {/* Currency Options */}
         <div>
-          <span className="material-icons">3d_rotation</span>
+          <CurrencyOptions name="cars" id="cars">
+            <option value="0">GBP</option>
+            <option value="1">AUD</option>
+            <option value="2">CAD</option>
+            <option value="3">HKD</option>
+            <option value="4">JPY</option>
+            <option value="5">NZD</option>
+            <option value="6">SGD</option>
+            <option value="7">USD</option>
+          </CurrencyOptions>
         </div>
-        <div>
+        {/* Search Bar Btn */}
+        <div
+          onClick={() => {
+            updateIsCartActive(false);
+            updateIsSearchBarActive(!isSearchBarActive);
+          }}
+        >
           <span className="material-icons">search</span>
         </div>
-        <div>
+        {/* Shopping Cart Btn */}
+        <div
+          onClick={() => {
+            updateIsSearchBarActive(false);
+            updateIsCartActive(!isCartActive);
+          }}
+        >
           <span className="material-icons">shopping_cart</span>
         </div>
       </NavButtons>
-      <SearchBar />
+      <SearchBar isSearchBarActive={isSearchBarActive} />
+      <Cart isCartActive={isCartActive} />
       <SubNav
         TriangleRef={TriangleRef}
         updateIsNavActive={updateIsNavActive}
@@ -70,13 +96,25 @@ const Logo = styled.h1`
   }
 `;
 const NavButtons = styled.div`
+  overflow-y: hidden;
+
   display: flex;
   align-items: center;
   padding-right: 4.5rem;
   * {
     padding-top: 0.3rem;
     margin-left: 0.8rem;
+    cursor: pointer;
   }
+`;
+
+const CurrencyOptions = styled.select`
+  background: none;
+  color: white;
+  border: none;
+  width: 4rem;
+  outline: none;
+  font-size: 1rem;
 `;
 
 export default Header;

@@ -5,10 +5,10 @@ import SwiperCore, { Pagination, EffectFade, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 import "../styles/swiperStyles.scss";
 // Import imgs
-import homeSlider1 from "../img/sliderimgs/homeSliderImg1L.jpg";
-import homeSlider2 from "../img/sliderimgs/homeSliderImg2L.jpg";
-import homeSlider3 from "../img/sliderimgs/homeSliderImg3L.jpg";
-import homeSlider4 from "../img/sliderimgs/homeSliderImg4L.jpg";
+import homeSlider1 from "../img/sliderimgs/homeSliderImg2L.jpg";
+import homeSlider2 from "../img/sliderimgs/homeSliderImg3L.jpg";
+import homeSlider3 from "../img/sliderimgs/homeSliderImg4L.jpg";
+import homeSlider4 from "../img/sliderimgs/homeSliderImg1L.jpg";
 import { siteData } from "../SiteData";
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);

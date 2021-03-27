@@ -34,7 +34,7 @@ export const siteData = {
   ],
   slider: [
     {
-      img: "homeSlider1",
+      img: "../img/sliderimgs/homeSliderImg4L.jpg",
       header: "Latest Footwear",
       title: "Nike SB Janoski",
       subtitle: "Aquamarine",
@@ -52,7 +52,7 @@ export const siteData = {
       subtitle: "LDN",
     },
     {
-      img: "../img/sliderimgs/homeSliderImg4L.jpg",
+      img: "../img/sliderimgs/homeSliderImg1L.jpg",
       header: "Sale",
       title: "Summer '20",
       subtitle: "Clearance",

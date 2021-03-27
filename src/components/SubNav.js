@@ -12,7 +12,7 @@ const SubNav = React.forwardRef(
     return (
       <StyledSubNav
         onMouseLeave={subNavMouseLeave}
-        className={isNavActive ? "show-nav" : "hide-nav"}
+        className={isNavActive ? "show" : "hide"}
         ref={ref}
       >
         <div className="sub-nav-header">{headingData.id}</div>

@@ -15,6 +15,7 @@ body{
     /* background-color: #111111; */
     font-family: 'Poppins', sans-serif;
     overscroll-behavior: none;
+    overflow-x: hidden;
 }
 
 button{
@@ -40,8 +41,7 @@ h3{
     font-size: 1.5rem;
 }
 h4{
-    font-weight: bold;
-    font-size: 2rem;
+
 }
 span{
     
