@@ -9,7 +9,6 @@ import homeSlider1 from "../img/sliderimgs/homeSliderImg2L.jpg";
 import homeSlider2 from "../img/sliderimgs/homeSliderImg3L.jpg";
 import homeSlider3 from "../img/sliderimgs/homeSliderImg4L.jpg";
 import homeSlider4 from "../img/sliderimgs/homeSliderImg1L.jpg";
-import { siteData } from "../SiteData";
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);
 
@@ -22,10 +21,8 @@ const Slider = ({ sliderData }) => {
       effect="fade"
       autoplay={{ delay: 5000, disableOnInteraction: false }}
       loop
-      slidesPerView={1}
+      slidesPerView={2}
       pagination={{ clickable: true }}
-      // onSlideChange={() => console.log('slide change')}
-      // onSwiper={(swiper) => console.log(swiper)}
     >
       {sliderData.map((item, i) => (
         <SwiperSlide key={i}>

@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header navData={siteState.nav} />
-      <Home sliderData={siteState.slider} />
+      <Home sliderData={siteState.slider} productData={siteState.products} />
     </div>
   );
 }

@@ -39,11 +39,10 @@ const SubNav = React.forwardRef(
 const StyledSubNav = styled.div`
   position: absolute;
   top: 8vh;
-  color: white;
   background: #02e1f5;
   width: 100vw;
   color: black;
-  padding: 0 30vw;
+  padding: 0 25vw;
   .sub-nav-header {
     font-size: 2rem;
     font-weight: 700;
@@ -52,7 +51,7 @@ const StyledSubNav = styled.div`
     color: rgba(0, 0, 0, 0.266);
   }
   .sub-nav-list {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -66,9 +65,10 @@ const StyledSubNav = styled.div`
       margin: 0.5rem 0.5rem 0.5rem 0;
       a {
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.8);
         &:hover {
-          color: rgba(0, 0, 0, 0.666);
+          color: rgba(0, 0, 0, 0.5);
         }
       }
     }
@@ -76,9 +76,14 @@ const StyledSubNav = styled.div`
 
   h3 {
     margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    a {
+      color: rgba(0, 0, 0, 0.8);
+    }
     a:hover {
-      color: rgba(0, 0, 0, 0.666);
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 `;

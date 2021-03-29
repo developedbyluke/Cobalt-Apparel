@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
-
-/* html{
+/* 
+html{
     font-size: 16px;
 } */
 
