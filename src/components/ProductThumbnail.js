@@ -28,16 +28,23 @@ const ProductThumbnail = ({ product }) => {
 };
 
 const Thumbnail = styled.div`
+  @media screen and (max-width: 1500px) {
+    width: 15rem;
+  }
   cursor: pointer;
-  max-width: 15rem;
+  width: 23rem;
+  margin: 0.5rem;
   * {
-    max-width: 15rem;
+    width: 100%;
   }
   .img-container {
     position: relative;
-    background: blue;
     overflow: hidden;
-    padding: 0;
+    padding-bottom: -2rem;
+    height: auto;
+    img {
+      margin-bottom: -1rem;
+    }
   }
   .sizes {
     position: absolute;
@@ -53,7 +60,7 @@ const Thumbnail = styled.div`
     bottom: 0;
   }
   .description {
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem;
     font-size: 0.8rem;
     font-weight: 500;
     &:hover {
