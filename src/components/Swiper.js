@@ -5,16 +5,10 @@ import SwiperCore, { Pagination, EffectFade, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 import "../styles/swiperStyles.scss";
 // Import imgs
-import homeSlider1 from "../img/sliderimgs/homeSliderImg2L.jpg";
-import homeSlider2 from "../img/sliderimgs/homeSliderImg3L.jpg";
-import homeSlider3 from "../img/sliderimgs/homeSliderImg4L.jpg";
-import homeSlider4 from "../img/sliderimgs/homeSliderImg1L.jpg";
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);
 
 const Slider = ({ sliderData }) => {
-  const imgs = [homeSlider1, homeSlider2, homeSlider3, homeSlider4];
-
   return (
     <Swiper
       spaceBetween={0}
@@ -27,7 +21,7 @@ const Slider = ({ sliderData }) => {
       {sliderData.map((item, i) => (
         <SwiperSlide key={i}>
           <div className="slide-container">
-            <img key={i} src={imgs[i]} alt="" style={{ width: "100%" }} />
+            <img key={i} src={item.img} alt="" style={{ width: "100%" }} />
             <figcaption className="slide-heading-and-button">
               <h3>{item.header}</h3>
               <h2>

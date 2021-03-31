@@ -5,11 +5,13 @@ import React, { useState } from "react";
 import { siteData } from "./SiteData";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductPage from "./pages/Product";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [siteState, updateSiteState] = useState(siteData);
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <GlobalStyle />
         <Header navData={siteState.nav} />
@@ -20,8 +22,8 @@ function App() {
               productData={siteState.products}
             />
           </Route>
-          <Route path="/product">
-            <ProductPage />
+          <Route path="/product/:id">
+            <ProductPage productData={siteState.products} />
           </Route>
         </Switch>
       </div>

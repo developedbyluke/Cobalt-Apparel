@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { siteData } from "../SiteData";
+import { Link } from "react-router-dom";
 
 const ProductThumbnail = ({ product }) => {
   const [hover, updateHover] = useState(false);
@@ -8,7 +9,11 @@ const ProductThumbnail = ({ product }) => {
     updateHover(!hover);
   };
   return (
-    <Thumbnail onMouseEnter={handleHover} onMouseLeave={handleHover}>
+    <Thumbnail
+      to={product.url}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+    >
       <div className="img-container">
         <img src={product.img1} alt="" />
         <div className={hover ? "show-sizes sizes" : "sizes"}>
@@ -27,7 +32,7 @@ const ProductThumbnail = ({ product }) => {
   );
 };
 
-const Thumbnail = styled.div`
+const Thumbnail = styled(Link)`
   @media screen and (max-width: 1500px) {
     width: 15rem;
   }
@@ -43,13 +48,13 @@ const Thumbnail = styled.div`
     padding-bottom: -2rem;
     height: auto;
     img {
-      margin-bottom: -1rem;
+      margin-bottom: -0.5rem;
     }
   }
   .sizes {
     position: absolute;
-    bottom: -100%;
-    transition: all 0.4s ease;
+    transform: translateY(0);
+    transition: all 0.5s ease;
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -57,7 +62,7 @@ const Thumbnail = styled.div`
     width: 100%;
   }
   .show-sizes {
-    bottom: 0;
+    transform: translateY(-100%);
   }
   .description {
     padding: 0.5rem;

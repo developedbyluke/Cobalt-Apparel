@@ -38,7 +38,7 @@ const SubNav = React.forwardRef(
 
 const StyledSubNav = styled.div`
   position: absolute;
-  top: 8vh;
+  top: 4rem;
   background: #02e1f5;
   width: 100vw;
   color: black;

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ReactComponent as NavTriangle } from "../img/navTriangle.svg";
 
@@ -60,7 +60,7 @@ const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: 8vh;
+    height: 4rem;
     li {
       height: 100%;
       display: flex;

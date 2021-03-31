@@ -5,6 +5,7 @@ import SearchBar from "../components/SearchBar";
 import SubNav from "../components/SubNav";
 import "../styles/headerToggleClasses.scss";
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 const Header = ({ navData }) => {
   const [navItemSelected, updateNavItemSelected] = useState("brands");
@@ -16,7 +17,7 @@ const Header = ({ navData }) => {
   return (
     <StyledHeader>
       <Logo id="logo">
-        <a href="#">Cobalt Apparel</a>
+        <Link to="/">Cobalt Apparel</Link>
       </Logo>
       <Nav
         navData={navData}
@@ -77,13 +78,13 @@ const StyledHeader = styled.header`
   position: absolute;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.783);
-  height: 8vh;
+  height: 4rem;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 `;
-const Logo = styled.h1`
+const Logo = styled.div`
   display: flex;
   align-items: center;
   padding-left: 4.5rem;

@@ -5,6 +5,10 @@ import vdpjgr from "./img/productimgs/Latest2.jpg";
 import gfvegy from "./img/productimgs/Latest3.jpg";
 import eaqvta from "./img/productimgs/Latest4.jpg";
 import fmdujh from "./img/productimgs/Latest5.jpg";
+import homeSlider1 from "./img/sliderimgs/homeSliderImg1L.jpg";
+import homeSlider2 from "./img/sliderimgs/homeSliderImg2L.jpg";
+import homeSlider3 from "./img/sliderimgs/homeSliderImg3L.jpg";
+import homeSlider4 from "./img/sliderimgs/homeSliderImg4L.jpg";
 
 export const siteData = {
   nav: [
@@ -42,28 +46,28 @@ export const siteData = {
   ],
   slider: [
     {
-      img: "./img/sliderimgs/homeSliderImg1L.jpg",
-      header: "Latest Footwear",
-      title: "Nike SB Janoski",
-      subtitle: "Aquamarine",
-    },
-    {
-      img: "../img/sliderimgs/homeSliderImg2L.jpg",
+      img: homeSlider2,
       header: "Latest Footwear",
       title: "Adidas 3MC Shoes",
       subtitle: "Chalk White",
     },
     {
-      img: "../img/sliderimgs/homeSliderImg3L.jpg",
+      img: homeSlider3,
       header: "New Brand",
       title: "Wayward Axle",
       subtitle: "LDN",
     },
     {
-      img: "../img/sliderimgs/homeSliderImg1L.jpg",
+      img: homeSlider4,
       header: "Sale",
       title: "Summer '20",
       subtitle: "Clearance",
+    },
+    {
+      img: homeSlider1,
+      header: "Latest Footwear",
+      title: "Nike SB Janoski",
+      subtitle: "Aquamarine",
     },
   ],
   products: [
@@ -84,6 +88,7 @@ export const siteData = {
         "More... ",
       ],
       img1: xlcsjw,
+      url: "/product/xlcsjw",
     },
     {
       id: "vdpjgr",
@@ -92,6 +97,7 @@ export const siteData = {
       price: 2500,
       sizes: ["S, ", "M, ", "L, ", "XL"],
       img1: vdpjgr,
+      url: "/product/vdpjgr",
     },
     {
       id: "gfvegy",
@@ -100,6 +106,7 @@ export const siteData = {
       price: 2500,
       sizes: ["S, ", "M, ", "L, ", "XL"],
       img1: gfvegy,
+      url: "/product/gfvegy",
     },
     {
       id: "eaqvta",
@@ -108,6 +115,7 @@ export const siteData = {
       price: 2500,
       sizes: ["S, ", "M, ", "L, ", "XL"],
       img1: eaqvta,
+      url: "/product/eaqvta",
     },
     {
       id: "fmdujh",
@@ -116,6 +124,7 @@ export const siteData = {
       price: 2500,
       sizes: ["S, ", "M, ", "L, ", "XL"],
       img1: fmdujh,
+      url: "/product/fmdujh",
     },
   ],
 };
