@@ -41,9 +41,6 @@ const SectionContainer = styled.div`
     justify-content: space-between;
     margin: 0 -0.5rem;
   }
-  .swiper:first-child {
-    color: blue;
-  }
 `;
 
 export default HomePageProducts;
