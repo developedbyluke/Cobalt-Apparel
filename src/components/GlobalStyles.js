@@ -51,14 +51,16 @@ a{
     text-decoration: none;
     color: black;
 }
-p{
-    padding: 3rem 0rem;
+p{  
     color: #ccc;
     font-size: 1.4rem;
     line-height: 150%;
 }
 ul{
     list-style: none;
+}
+img{
+    display: block;
 }
 
 `;

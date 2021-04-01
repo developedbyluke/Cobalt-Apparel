@@ -45,11 +45,6 @@ const Thumbnail = styled(Link)`
   .img-container {
     position: relative;
     overflow: hidden;
-    padding-bottom: -2rem;
-    height: auto;
-    img {
-      margin-bottom: -0.5rem;
-    }
   }
   .sizes {
     position: absolute;
