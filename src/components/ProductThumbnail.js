@@ -20,7 +20,7 @@ const ProductThumbnail = ({ product }) => {
           Sizes:
           <br />
           {product.sizes.map((size) => (
-            <span key={size}>{size}</span>
+            <span key={size}>{size}, </span>
           ))}
         </div>
       </div>

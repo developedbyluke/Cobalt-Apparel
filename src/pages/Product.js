@@ -8,6 +8,7 @@ const ProductPage = ({ productData }) => {
   const productId = url.split("/")[2];
   const [products, updateProducts] = useState(productData);
   const [currentProduct, updateCurrentProduct] = useState(null);
+  const [size, updateSize] = useState("Size");
 
   useEffect(() => {
     updateCurrentProduct(
@@ -24,7 +25,14 @@ const ProductPage = ({ productData }) => {
             <h3>£{currentProduct.price / 100}.00</h3>
             <p>{currentProduct.style}</p>
             <button>Add To Basket</button>
-            <button>Size</button>
+            <div className="dropdown-wrapper">
+              <button>Size</button>
+              <ul>
+                {currentProduct.sizes.map((size) => (
+                  <li>{size}</li>
+                ))}
+              </ul>
+            </div>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad ea
               eius, voluptatibus natus eligendi vitae veritatis sunt alias
@@ -82,6 +90,17 @@ const Product = styled.div`
     p {
       font-size: 1rem;
       font-weight: 300;
+    }
+    .dropdown-wrapper {
+      height: 3rem;
+      position: relative;
+      text-align: center;
+      ul {
+        background: rgba(136, 136, 136);
+        li {
+          color: white;
+        }
+      }
     }
   }
 `;
