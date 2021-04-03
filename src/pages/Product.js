@@ -1,3 +1,5 @@
+// Add disabled attribute the basket button if !size
+
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
@@ -8,14 +10,22 @@ const ProductPage = ({ productData }) => {
   const productId = url.split("/")[2];
   const [products, updateProducts] = useState(productData);
   const [currentProduct, updateCurrentProduct] = useState(null);
-  const [size, updateSize] = useState("Size");
+  const [currentSize, updatecurrentSize] = useState("Size");
+  const [sizePanelOpen, updateSizePanelOpen] = useState(false);
 
   useEffect(() => {
     updateCurrentProduct(
       ...products.filter((product) => product.id === productId)
     );
-  }, [url, productId, productData]);
-  console.log(currentProduct);
+  }, [url, productId, productData, products]);
+
+  // Functions
+  const handleSizeClick = (e) => {
+    const size = e.currentTarget.id;
+    updatecurrentSize(size);
+    updateSizePanelOpen(false);
+  };
+
   return (
     <>
       {currentProduct && (
@@ -26,11 +36,17 @@ const ProductPage = ({ productData }) => {
             <p>{currentProduct.style}</p>
             <button>Add To Basket</button>
             <div className="dropdown-wrapper">
-              <button>Size</button>
-              <ul>
-                {currentProduct.sizes.map((size) => (
-                  <li>{size}</li>
-                ))}
+              <button onClick={() => updateSizePanelOpen(!sizePanelOpen)}>
+                {currentSize}
+              </button>
+              <ul className={sizePanelOpen ? "open" : ""}>
+                {currentProduct.sizes
+                  .filter((size) => size !== "More...")
+                  .map((size, i) => (
+                    <li id={size} key={i} onClick={handleSizeClick}>
+                      {size}
+                    </li>
+                  ))}
               </ul>
             </div>
             <p>
@@ -96,10 +112,18 @@ const Product = styled.div`
       position: relative;
       text-align: center;
       ul {
+        opacity: 0;
         background: rgba(136, 136, 136);
         li {
           color: white;
+          &:hover {
+            color: black;
+            cursor: pointer;
+          }
         }
+      }
+      .open {
+        opacity: 1;
       }
     }
   }

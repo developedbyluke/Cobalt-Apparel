@@ -8,16 +8,16 @@ const HomePageProducts = ({ products }) => {
       <SectionContainer className="latest">
         <h4>Latest </h4>
         <div className="swiper">
-          {products.map((product) => (
-            <ProductThumbnail product={product} />
+          {products.map((product, i) => (
+            <ProductThumbnail key={i} product={product} />
           ))}
         </div>
       </SectionContainer>
       <SectionContainer className="latest">
         <h4>Recommended</h4>
         <div className="swiper">
-          {products.map((product) => (
-            <ProductThumbnail product={product} />
+          {products.map((product, i) => (
+            <ProductThumbnail key={i} product={product} />
           ))}
         </div>
       </SectionContainer>
