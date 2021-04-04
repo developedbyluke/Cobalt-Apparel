@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
-const ProductPage = ({ productData }) => {
+const ProductPage = ({ productData, updateCartContent }) => {
   const history = useHistory();
   const url = history.location.pathname;
   const productId = url.split("/")[2];
   const [products, updateProducts] = useState(productData);
   const [currentProduct, updateCurrentProduct] = useState(null);
-  const [currentSize, updatecurrentSize] = useState("Size");
+  const [currentSize, updateCurrentSize] = useState("Size");
   const [sizePanelOpen, updateSizePanelOpen] = useState(false);
 
   useEffect(() => {
@@ -22,10 +22,15 @@ const ProductPage = ({ productData }) => {
   // Functions
   const handleSizeClick = (e) => {
     const size = e.currentTarget.id;
-    updatecurrentSize(size);
+    updateCurrentSize(size);
     updateSizePanelOpen(false);
   };
 
+  const handleAddToBasket = (e) => {
+    updateCartContent((arr) => [...arr, currentProduct]);
+  };
+
+  const hasChosenSize = currentSize !== "Size";
   return (
     <>
       {currentProduct && (
@@ -34,10 +39,18 @@ const ProductPage = ({ productData }) => {
             <h3>{currentProduct.title}</h3>
             <h3>£{currentProduct.price / 100}.00</h3>
             <p>{currentProduct.style}</p>
-            <button>Add To Basket</button>
+            <button
+              className={hasChosenSize ? "" : "disabled"}
+              onClick={handleAddToBasket}
+            >
+              {hasChosenSize ? "Add to basket" : "Choose a size"}
+            </button>
             <div className="dropdown-wrapper">
               <button onClick={() => updateSizePanelOpen(!sizePanelOpen)}>
-                {currentSize}
+                {currentSize}{" "}
+                <span className="material-icons arrow">
+                  {sizePanelOpen ? "expand_less" : "expand_more"}
+                </span>
               </button>
               <ul className={sizePanelOpen ? "open" : ""}>
                 {currentProduct.sizes
@@ -102,6 +115,7 @@ const Product = styled.div`
     button {
       display: inline-block;
       width: 100%;
+      position: relative;
     }
     p {
       font-size: 1rem;
@@ -125,6 +139,19 @@ const Product = styled.div`
       .open {
         opacity: 1;
       }
+    }
+    .disabled {
+      pointer-events: none;
+      background: #c8c8c8;
+    }
+    .arrow {
+      height: 1rem;
+      /* background: blue; */
+      position: absolute;
+      right: 0.5rem;
+      top: 0;
+      height: 100%;
+      font-size: 1rem;
     }
   }
 `;

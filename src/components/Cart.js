@@ -2,25 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import "../styles/headerToggleClasses.scss";
 
-const Cart = ({ isCartActive }) => {
+const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
   const x = "x";
   return (
     <StyledCart className={isCartActive ? "show" : "hide"}>
       <ul>
-        <li>
-          <img
-            src="https://cdn.shopify.com/s/files/1/1202/6102/products/nike-sb-blazer-mid-shoes-photon-dust-psychic-blue-photon-dust-1_small.jpg?v=1616776986"
-            alt=""
-          />
-          <div className="description">
-            <h3>Nike SB Blazer Mid Shoes,</h3>
-            <h4>
-              Photon Dust, Psychic Blue, Photon DustUK 7.5 <span>x 1</span>
-            </h4>
-          </div>
-          <h4 className="price">£75</h4>
-          <button>X</button>
-        </li>
+        {cartContent.map((product) => {
+          return (
+            <li>
+              <img src={product.img1} alt="" />
+              <div className="description">
+                <h3>{product.title}</h3>
+                <h4>
+                  {product.style} <span>x 1</span>
+                </h4>
+              </div>
+              <h4 className="price">£{product.price / 100}.00</h4>
+              <button>X</button>
+            </li>
+          );
+        })}
       </ul>
       <div className="buttons">
         <button>View Basket</button>
@@ -33,7 +34,7 @@ const Cart = ({ isCartActive }) => {
 const StyledCart = styled.div`
   position: absolute;
   background: #ebebe6;
-  top: 8vh;
+  top: 4rem;
   right: 0;
   color: black;
   padding: 1rem 1rem;
@@ -51,6 +52,9 @@ const StyledCart = styled.div`
     }
     h3 {
       font-size: 1rem;
+    }
+    img {
+      height: 4rem;
     }
     h4 {
       font-size: 0.9rem;

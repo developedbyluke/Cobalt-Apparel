@@ -1,19 +1,30 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Nav from "../components/Nav";
 import SearchBar from "../components/SearchBar";
 import SubNav from "../components/SubNav";
 import "../styles/headerToggleClasses.scss";
 import Cart from "./Cart";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const Header = ({ navData }) => {
+const Header = ({ navData, cartContent, updateCartContent }) => {
+  const history = useHistory();
+
   const [navItemSelected, updateNavItemSelected] = useState("brands");
   const [isNavActive, updateIsNavActive] = useState(false);
   const [isSearchBarActive, updateIsSearchBarActive] = useState(false);
   const [isCartActive, updateIsCartActive] = useState(false);
   const TriangleRef = useRef();
   const SubNavRef = useRef();
+
+  useEffect(() => {
+    return history.listen(() => {
+      updateIsCartActive(false);
+      updateIsSearchBarActive(false);
+    });
+  }, [history]);
+  console.log(cartContent);
+
   return (
     <StyledHeader>
       <Logo id="logo">
@@ -60,7 +71,11 @@ const Header = ({ navData }) => {
         </div>
       </NavButtons>
       <SearchBar isSearchBarActive={isSearchBarActive} />
-      <Cart isCartActive={isCartActive} />
+      <Cart
+        isCartActive={isCartActive}
+        updateCartContent={updateCartContent}
+        cartContent={cartContent}
+      />
       <SubNav
         TriangleRef={TriangleRef}
         updateIsNavActive={updateIsNavActive}

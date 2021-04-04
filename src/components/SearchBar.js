@@ -15,9 +15,10 @@ const SearchBar = ({ isSearchBarActive }) => {
   );
 };
 const StyledForm = styled.form`
+  box-shadow: 0px 2px 6px rgb(100, 100, 100);
   position: absolute;
-  top: 8vh;
-  height: 4vh;
+  top: 4rem;
+  height: 2rem;
   transition: right 0.5s ease;
   display: flex;
   width: 45vw;

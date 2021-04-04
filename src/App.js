@@ -9,12 +9,17 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [siteState, updateSiteState] = useState(siteData);
+  const [cartContent, updateCartContent] = useState([]);
   return (
     <Router>
       <ScrollToTop />
       <div className="App">
         <GlobalStyle />
-        <Header navData={siteState.nav} />
+        <Header
+          navData={siteState.nav}
+          cartContent={cartContent}
+          updateCartContent={updateCartContent}
+        />
         <Switch>
           <Route path="/" exact>
             <Home
@@ -23,7 +28,10 @@ function App() {
             />
           </Route>
           <Route path="/product/:id">
-            <ProductPage productData={siteState.products} />
+            <ProductPage
+              productData={siteState.products}
+              updateCartContent={updateCartContent}
+            />
           </Route>
         </Switch>
       </div>
