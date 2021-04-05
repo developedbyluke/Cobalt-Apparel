@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "../styles/headerToggleClasses.scss";
+import { Link } from "react-router-dom";
 
 const SubNav = React.forwardRef(
   ({ headingData, isNavActive, updateIsNavActive, TriangleRef }, ref) => {
@@ -8,7 +9,7 @@ const SubNav = React.forwardRef(
       TriangleRef.current.style.opacity = "0";
       updateIsNavActive(false);
     };
-    if (!headingData) return;
+
     return (
       <StyledSubNav
         onMouseLeave={subNavMouseLeave}
@@ -20,7 +21,9 @@ const SubNav = React.forwardRef(
           {headingData.listItems.sort().map((item) => {
             return (
               <li key={item}>
-                <a href="#">{item}</a>
+                <Link to={"collection" + "/" + headingData.id + "/" + item}>
+                  {item}
+                </Link>
               </li>
             );
           })}

@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { siteData } from "./SiteData";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductPage from "./pages/Product";
+import CollectionPage from "./pages/Collection";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -29,6 +30,12 @@ function App() {
           </Route>
           <Route path="/product/:id">
             <ProductPage
+              productData={siteState.products}
+              updateCartContent={updateCartContent}
+            />
+          </Route>
+          <Route path="/collection/:id/:id">
+            <CollectionPage
               productData={siteState.products}
               updateCartContent={updateCartContent}
             />
