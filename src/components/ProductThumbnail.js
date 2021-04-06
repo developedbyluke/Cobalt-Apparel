@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { siteData } from "../SiteData";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { siteData } from '../SiteData';
+import { Link } from 'react-router-dom';
 
 const ProductThumbnail = ({ product }) => {
   const [hover, updateHover] = useState(false);
@@ -16,7 +16,7 @@ const ProductThumbnail = ({ product }) => {
     >
       <div className="img-container">
         <img src={product.img1} alt="" />
-        <div className={hover ? "show-sizes sizes" : "sizes"}>
+        <div className={hover ? 'show-sizes sizes' : 'sizes'}>
           Sizes:
           <br />
           {product.sizes.map((size) => (
@@ -25,7 +25,7 @@ const ProductThumbnail = ({ product }) => {
         </div>
       </div>
       <h5 className="description">
-        {product.title} <span>, {product.style}</span>{" "}
+        {product.title} <span>, {product.style}</span>{' '}
       </h5>
       <h5 className="price">£{product.price / 100}.00</h5>
     </Thumbnail>
@@ -38,7 +38,8 @@ const Thumbnail = styled(Link)`
   }
   cursor: pointer;
   width: 23rem;
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
+  padding: 0.5rem;
   * {
     width: 100%;
   }

@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { ReactComponent as NavTriangle } from "../img/navTriangle.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { ReactComponent as NavTriangle } from '../img/navTriangle.svg';
 
 const Nav = React.forwardRef(
   ({ updateNavItemSelected, updateIsNavActive, SubNavRef }, ref) => {
@@ -8,7 +8,7 @@ const Nav = React.forwardRef(
       const navElementOffset =
         e.currentTarget.offsetLeft + e.currentTarget.offsetWidth / 2;
       ref.current.style.left = `${navElementOffset}px`;
-      ref.current.style.opacity = "1";
+      ref.current.style.opacity = '1';
       updateNavItemSelected(e.currentTarget.id);
       updateIsNavActive(true);
     };
@@ -16,7 +16,7 @@ const Nav = React.forwardRef(
     const navMouseLeave = (e) => {
       const subNavRect = SubNavRef.current.getBoundingClientRect();
       if (subNavRect.top - e.pageY > 2) {
-        ref.current.style.opacity = "0";
+        ref.current.style.opacity = '0';
         updateIsNavActive(false);
       }
     };
@@ -72,12 +72,12 @@ const StyledNav = styled.nav`
       color: white;
     }
     li::after {
-      content: "|";
+      content: '|';
       color: grey;
     }
     .end {
       ::after {
-        content: "";
+        content: '';
       }
       a {
         padding-right: 0 0 0 2rem;

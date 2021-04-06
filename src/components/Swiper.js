@@ -1,9 +1,9 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination, EffectFade, Autoplay } from "swiper";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, EffectFade, Autoplay } from 'swiper';
 // Import Swiper styles
-import "swiper/swiper-bundle.css";
-import "../styles/swiperStyles.scss";
+import 'swiper/swiper-bundle.css';
+import '../styles/swiperStyles.scss';
 // Import imgs
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);
@@ -21,7 +21,7 @@ const Slider = ({ sliderData }) => {
       {sliderData.map((item, i) => (
         <SwiperSlide key={i}>
           <div className="slide-container">
-            <img key={i} src={item.img} alt="" style={{ width: "100%" }} />
+            <img key={i} src={item.img} alt="" style={{ width: '100%' }} />
             <figcaption className="slide-heading-and-button">
               <h3>{item.header}</h3>
               <h2>

@@ -1,11 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import "../styles/headerToggleClasses.scss";
+import React from 'react';
+import styled from 'styled-components';
+import '../styles/headerToggleClasses.scss';
 
 const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
-  const x = "x";
   return (
-    <StyledCart className={isCartActive ? "show" : "hide"}>
+    <StyledCart className={isCartActive ? 'show' : 'hide'}>
       <ul>
         {cartContent.map((product) => {
           return (
@@ -46,9 +45,14 @@ const StyledCart = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin: 0.5rem 0;
+
       * {
         margin: 0 0.5rem;
       }
+    }
+    .description {
+      width: 55%;
     }
     h3 {
       font-size: 1rem;

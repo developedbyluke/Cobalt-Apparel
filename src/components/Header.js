@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
-import Nav from "../components/Nav";
-import SearchBar from "../components/SearchBar";
-import SubNav from "../components/SubNav";
-import "../styles/headerToggleClasses.scss";
-import Cart from "./Cart";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState, useRef, useEffect } from 'react';
+import styled from 'styled-components';
+import Nav from '../components/Nav';
+import SearchBar from '../components/SearchBar';
+import SubNav from '../components/SubNav';
+import '../styles/headerToggleClasses.scss';
+import Cart from './Cart';
+import { Link, useHistory } from 'react-router-dom';
 
 const Header = ({
   navData,
@@ -16,7 +16,7 @@ const Header = ({
 }) => {
   const history = useHistory();
 
-  const [navItemSelected, updateNavItemSelected] = useState("brands");
+  const [navItemSelected, updateNavItemSelected] = useState('brands');
   const [isNavActive, updateIsNavActive] = useState(false);
   const [isSearchBarActive, updateIsSearchBarActive] = useState(false);
   const [isCartActive, updateIsCartActive] = useState(false);
@@ -113,7 +113,7 @@ const Logo = styled.div`
 
   a {
     color: white;
-    font-family: "Caveat", cursive;
+    font-family: 'Caveat', cursive;
     font-weight: 400;
     font-size: 2rem;
   }

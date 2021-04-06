@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import "../styles/headerToggleClasses.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import '../styles/headerToggleClasses.scss';
+import { Link } from 'react-router-dom';
 
 const SubNav = React.forwardRef(
   (
@@ -16,14 +16,14 @@ const SubNav = React.forwardRef(
     ref
   ) => {
     const subNavMouseLeave = () => {
-      TriangleRef.current.style.opacity = "0";
+      TriangleRef.current.style.opacity = '0';
       updateIsNavActive(false);
     };
 
     return (
       <StyledSubNav
         onMouseLeave={subNavMouseLeave}
-        className={isNavActive ? "show" : "hide"}
+        className={isNavActive ? 'show' : 'hide'}
         ref={ref}
       >
         <div className="sub-nav-header">{headingData.id}</div>
@@ -44,8 +44,11 @@ const SubNav = React.forwardRef(
           })}
         </ul>
         <h3>
-          <Link to={`/collection/${headingData.id}`}>
-            View All{" "}
+          <Link
+            onClick={() => updateCollection(`/collection/${headingData.id}`)}
+            to={`/collection/${headingData.id}`}
+          >
+            View All{' '}
             {headingData.id.charAt(0).toUpperCase() + headingData.id.slice(1)}
           </Link>
         </h3>

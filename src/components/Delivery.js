@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Delivery = () => {
   return (
     <DeliveryBanner>
       <h5>
-        Free UK delivery on all orders over £80{" "}
+        Free UK delivery on all orders over £80{' '}
         <span className="material-icons">local_shipping</span>
       </h5>
     </DeliveryBanner>
@@ -20,7 +20,7 @@ const DeliveryBanner = styled.div`
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   h5 {
     display: flex;
     align-items: center;

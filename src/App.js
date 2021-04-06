@@ -1,16 +1,19 @@
-import GlobalStyle from "./components/GlobalStyles";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import React, { useState } from "react";
-import { siteData } from "./SiteData";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProductPage from "./pages/Product";
-import CollectionPage from "./pages/Collection";
-import ScrollToTop from "./components/ScrollToTop";
+import GlobalStyle from './components/GlobalStyles';
+import Header from './components/Header';
+import Home from './pages/Home';
+import React, { useState } from 'react';
+import { siteData } from './SiteData';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProductPage from './pages/Product';
+import CollectionPage from './pages/Collection';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [siteState, updateSiteState] = useState(siteData);
-  const [cartContent, updateCartContent] = useState([]);
+  const [cartContent, updateCartContent] = useState(
+    // JSON.parse(localStorage.getItem('cart'))
+    []
+  );
   const [collection, updateCollection] = useState(null);
   return (
     <Router>

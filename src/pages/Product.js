@@ -1,16 +1,16 @@
 // Add disabled attribute the basket button if !size
 
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const ProductPage = ({ productData, updateCartContent }) => {
   const history = useHistory();
   const url = history.location.pathname;
-  const productId = url.split("/")[2];
+  const productId = url.split('/')[2];
   const [products, updateProducts] = useState(productData);
   const [currentProduct, updateCurrentProduct] = useState(null);
-  const [currentSize, updateCurrentSize] = useState("Size");
+  const [currentSize, updateCurrentSize] = useState('Size');
   const [sizePanelOpen, updateSizePanelOpen] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const ProductPage = ({ productData, updateCartContent }) => {
     updateCartContent((arr) => [...arr, currentProduct]);
   };
 
-  const hasChosenSize = currentSize !== "Size";
+  const hasChosenSize = currentSize !== 'Size';
   return (
     <>
       {currentProduct && (
@@ -40,21 +40,21 @@ const ProductPage = ({ productData, updateCartContent }) => {
             <h3>£{currentProduct.price / 100}.00</h3>
             <p>{currentProduct.style}</p>
             <button
-              className={hasChosenSize ? "" : "disabled"}
+              className={hasChosenSize ? '' : 'disabled'}
               onClick={handleAddToBasket}
             >
-              {hasChosenSize ? "Add to basket" : "Choose a size"}
+              {hasChosenSize ? 'Add to basket' : 'Choose a size'}
             </button>
             <div className="dropdown-wrapper">
               <button onClick={() => updateSizePanelOpen(!sizePanelOpen)}>
-                {currentSize}{" "}
+                {currentSize}{' '}
                 <span className="material-icons arrow">
-                  {sizePanelOpen ? "expand_less" : "expand_more"}
+                  {sizePanelOpen ? 'expand_less' : 'expand_more'}
                 </span>
               </button>
-              <ul className={sizePanelOpen ? "open" : ""}>
+              <ul className={sizePanelOpen ? 'open' : ''}>
                 {currentProduct.sizes
-                  .filter((size) => size !== "More...")
+                  .filter((size) => size !== 'More...')
                   .map((size, i) => (
                     <li id={size} key={i} onClick={handleSizeClick}>
                       {size}

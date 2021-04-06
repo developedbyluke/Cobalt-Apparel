@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import "../styles/headerToggleClasses.scss";
+import React from 'react';
+import styled from 'styled-components';
+import '../styles/headerToggleClasses.scss';
 
 const SearchBar = ({ isSearchBarActive }) => {
   return (
     <StyledForm
       action=""
       method="get"
-      className={isSearchBarActive ? "show-search-bar" : "hide-search-bar"}
+      className={isSearchBarActive ? 'show-search-bar' : 'hide-search-bar'}
     >
       <input type="text"></input>
       <button className="material-icons">search</button>
@@ -30,7 +30,7 @@ const StyledForm = styled.form`
     border: none;
     width: 100%;
     padding: 0rem 0.5rem;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
   }
   button {

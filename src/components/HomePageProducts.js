@@ -1,6 +1,6 @@
-import React from "react";
-import ProductThumbnail from "./ProductThumbnail";
-import styled from "styled-components";
+import React from 'react';
+import ProductThumbnail from './ProductThumbnail';
+import styled from 'styled-components';
 
 const HomePageProducts = ({ products }) => {
   return (
