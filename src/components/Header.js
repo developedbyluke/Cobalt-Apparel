@@ -7,7 +7,7 @@ import "../styles/headerToggleClasses.scss";
 import Cart from "./Cart";
 import { Link, useHistory } from "react-router-dom";
 
-const Header = ({ navData, cartContent, updateCartContent }) => {
+const Header = ({ navData, productData, cartContent, updateCartContent }) => {
   const history = useHistory();
 
   const [navItemSelected, updateNavItemSelected] = useState("brands");
@@ -23,7 +23,6 @@ const Header = ({ navData, cartContent, updateCartContent }) => {
       updateIsSearchBarActive(false);
     });
   }, [history]);
-  console.log(cartContent);
 
   return (
     <StyledHeader>
@@ -77,6 +76,7 @@ const Header = ({ navData, cartContent, updateCartContent }) => {
         cartContent={cartContent}
       />
       <SubNav
+        productData={productData}
         TriangleRef={TriangleRef}
         updateIsNavActive={updateIsNavActive}
         ref={SubNavRef}

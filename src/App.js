@@ -17,6 +17,7 @@ function App() {
       <div className="App">
         <GlobalStyle />
         <Header
+          productData={siteState.products}
           navData={siteState.nav}
           cartContent={cartContent}
           updateCartContent={updateCartContent}
@@ -34,7 +35,7 @@ function App() {
               updateCartContent={updateCartContent}
             />
           </Route>
-          <Route path="/collection/:id/:id">
+          <Route path="/collection/:id" exact>
             <CollectionPage
               productData={siteState.products}
               updateCartContent={updateCartContent}

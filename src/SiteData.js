@@ -90,7 +90,7 @@ export const siteData = {
       img1: xlcsjw,
       url: "/product/xlcsjw",
       brand: "Nike SB",
-      collection: "shoes",
+      collection: "shoes/brands/nike sb",
     },
     {
       id: "vdpjgr",
@@ -101,7 +101,7 @@ export const siteData = {
       img1: vdpjgr,
       url: "/product/vdpjgr",
       brand: "Nike SB",
-      collection: "clothing/tshirt",
+      collection: "clothing/t-shirts/brands/adidas",
     },
     {
       id: "gfvegy",
@@ -112,7 +112,7 @@ export const siteData = {
       img1: gfvegy,
       url: "/product/gfvegy",
       brand: "Nike SB",
-      collection: "clothing/tshirt",
+      collection: "clothing/t-shirts/brands/nike sb",
     },
     {
       id: "eaqvta",
@@ -124,7 +124,7 @@ export const siteData = {
       img1: eaqvta,
       url: "/product/eaqvta",
       brand: "Nike SB",
-      collection: "clothing/tshirt",
+      collection: "clothing/t-shirts/brands/nike sb",
     },
     {
       id: "fmdujh",
@@ -135,7 +135,7 @@ export const siteData = {
       img1: fmdujh,
       url: "/product/fmdujh",
       brand: "Nike SB",
-      collection: "clothing/tshirt",
+      collection: "clothing/t-shirts/brands/rvca",
     },
   ],
 };

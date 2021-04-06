@@ -4,10 +4,24 @@ import "../styles/headerToggleClasses.scss";
 import { Link } from "react-router-dom";
 
 const SubNav = React.forwardRef(
-  ({ headingData, isNavActive, updateIsNavActive, TriangleRef }, ref) => {
+  (
+    { headingData, productData, isNavActive, updateIsNavActive, TriangleRef },
+    ref
+  ) => {
     const subNavMouseLeave = () => {
       TriangleRef.current.style.opacity = "0";
       updateIsNavActive(false);
+    };
+    const CollectionFilter = (collection, secondFilter) => {
+      const filteredProducts = productData.filter((product) => {
+        if (!secondFilter) return product.collection.includes(collection);
+        return (
+          product.collection.includes(collection) &&
+          product.collection.includes(secondFilter.toLowerCase())
+        );
+      });
+      console.log({ collection, secondFilter });
+      console.log(filteredProducts);
     };
 
     return (
@@ -21,7 +35,10 @@ const SubNav = React.forwardRef(
           {headingData.listItems.sort().map((item) => {
             return (
               <li key={item}>
-                <Link to={"collection" + "/" + headingData.id + "/" + item}>
+                <Link
+                  onClick={() => CollectionFilter(headingData.id, item)}
+                  to={"/collection/" + item}
+                >
                   {item}
                 </Link>
               </li>
@@ -29,7 +46,7 @@ const SubNav = React.forwardRef(
           })}
         </ul>
         <h3>
-          <a href="#">
+          <a href="#" onClick={() => CollectionFilter(headingData.id)}>
             View All{" "}
             {headingData.id.charAt(0).toUpperCase() + headingData.id.slice(1)}
           </a>
