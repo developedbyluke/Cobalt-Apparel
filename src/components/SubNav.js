@@ -5,23 +5,19 @@ import { Link } from "react-router-dom";
 
 const SubNav = React.forwardRef(
   (
-    { headingData, productData, isNavActive, updateIsNavActive, TriangleRef },
+    {
+      headingData,
+      productData,
+      isNavActive,
+      updateIsNavActive,
+      TriangleRef,
+      updateCollection,
+    },
     ref
   ) => {
     const subNavMouseLeave = () => {
       TriangleRef.current.style.opacity = "0";
       updateIsNavActive(false);
-    };
-    const CollectionFilter = (collection, secondFilter) => {
-      const filteredProducts = productData.filter((product) => {
-        if (!secondFilter) return product.collection.includes(collection);
-        return (
-          product.collection.includes(collection) &&
-          product.collection.includes(secondFilter.toLowerCase())
-        );
-      });
-      console.log({ collection, secondFilter });
-      console.log(filteredProducts);
     };
 
     return (
@@ -36,8 +32,10 @@ const SubNav = React.forwardRef(
             return (
               <li key={item}>
                 <Link
-                  onClick={() => CollectionFilter(headingData.id, item)}
-                  to={"/collection/" + item}
+                  onClick={() =>
+                    updateCollection(`/collection/${headingData.id}/${item}`)
+                  }
+                  to={`/collection/${headingData.id}/${item}`}
                 >
                   {item}
                 </Link>
@@ -46,10 +44,10 @@ const SubNav = React.forwardRef(
           })}
         </ul>
         <h3>
-          <a href="#" onClick={() => CollectionFilter(headingData.id)}>
+          <Link to={`/collection/${headingData.id}`}>
             View All{" "}
             {headingData.id.charAt(0).toUpperCase() + headingData.id.slice(1)}
-          </a>
+          </Link>
         </h3>
       </StyledSubNav>
     );

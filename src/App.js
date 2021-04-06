@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const [siteState, updateSiteState] = useState(siteData);
   const [cartContent, updateCartContent] = useState([]);
+  const [collection, updateCollection] = useState(null);
   return (
     <Router>
       <ScrollToTop />
@@ -21,6 +22,7 @@ function App() {
           navData={siteState.nav}
           cartContent={cartContent}
           updateCartContent={updateCartContent}
+          updateCollection={updateCollection}
         />
         <Switch>
           <Route path="/" exact>
@@ -35,8 +37,9 @@ function App() {
               updateCartContent={updateCartContent}
             />
           </Route>
-          <Route path="/collection/:id" exact>
+          <Route path="/collection/:id">
             <CollectionPage
+              collection={collection}
               productData={siteState.products}
               updateCartContent={updateCartContent}
             />
