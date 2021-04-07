@@ -37,9 +37,11 @@ const SectionContainer = styled.div`
     text-transform: uppercase;
   }
   .swiper {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 -0.5rem;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0 -0.25rem;
   }
 `;
 

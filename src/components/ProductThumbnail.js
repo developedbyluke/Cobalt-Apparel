@@ -34,12 +34,10 @@ const ProductThumbnail = ({ product }) => {
 
 const Thumbnail = styled(Link)`
   @media screen and (max-width: 1500px) {
-    width: 15rem;
+    /* max-width: 14rem; */
   }
   cursor: pointer;
-  width: 23rem;
-  /* margin: 0.5rem; */
-  padding: 0.5rem;
+  margin: 0.5rem 0.25rem;
   * {
     width: 100%;
   }

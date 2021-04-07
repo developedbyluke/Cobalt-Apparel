@@ -15,12 +15,16 @@ function App() {
     []
   );
   const [collection, updateCollection] = useState(null);
+  const [isNavActive, updateIsNavActive] = useState(false);
+
   return (
     <Router>
       <ScrollToTop />
       <div className="App">
         <GlobalStyle />
         <Header
+          isNavActive={isNavActive}
+          updateIsNavActive={updateIsNavActive}
           productData={siteState.products}
           navData={siteState.nav}
           cartContent={cartContent}
@@ -42,6 +46,7 @@ function App() {
           </Route>
           <Route path="/collection/:id">
             <CollectionPage
+              updateIsNavActive={updateIsNavActive}
               collection={collection}
               productData={siteState.products}
               updateCartContent={updateCartContent}

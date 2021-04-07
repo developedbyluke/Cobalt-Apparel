@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import ProductThumbnail from '../components/ProductThumbnail';
+import Delivery from '../components/Delivery';
 import styled from 'styled-components';
 
-const CollectionPage = ({ productData, collection }) => {
+const CollectionPage = ({ productData, collection, updateIsNavActive }) => {
   const [products, updateProducts] = useState(productData);
   const [filteredCollection, updateFilteredCollection] = useState(null);
   const history = useHistory();
   const url = history.location.pathname;
-
+  const x = url.split('/');
   useEffect(() => {
     const CollectionFilter = (collection, secondFilter) => {
+      updateIsNavActive(false);
       return products.filter((product) => {
         if (!secondFilter) return product.collection.includes(collection);
         return (
@@ -19,14 +21,15 @@ const CollectionPage = ({ productData, collection }) => {
         );
       });
     };
-    const x = url.split('/');
+
     const filteredResults = CollectionFilter(x[2], x[3]);
     updateFilteredCollection(filteredResults);
     console.log(url);
   }, [collection, products, url]);
-
   return (
-    <>
+    <Container>
+      <h3>{x[3] ? x[2] + ' - ' + x[3] : 'All ' + x[2]}</h3>
+      <Delivery />
       {filteredCollection && (
         <Collection>
           {filteredCollection.map((product, i) => {
@@ -34,19 +37,24 @@ const CollectionPage = ({ productData, collection }) => {
           })}
         </Collection>
       )}
-    </>
+    </Container>
   );
 };
 
-const Collection = styled.div`
-  padding: 8rem 6rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 13rem));
-  justify-content: space-between;
-  grid-gap: 1rem;
-  margin: 0 -0.5rem;
-   {
+const Container = styled.div`
+  padding: 6rem;
+  h3 {
+    color: rgba(0, 0, 0, 0.7);
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    text-transform: capitalize;
   }
+`;
+
+const Collection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 -0.25rem;
 `;
 
 export default CollectionPage;

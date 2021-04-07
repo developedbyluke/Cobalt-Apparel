@@ -13,11 +13,12 @@ const Header = ({
   cartContent,
   updateCartContent,
   updateCollection,
+  updateIsNavActive,
+  isNavActive,
 }) => {
   const history = useHistory();
 
   const [navItemSelected, updateNavItemSelected] = useState('brands');
-  const [isNavActive, updateIsNavActive] = useState(false);
   const [isSearchBarActive, updateIsSearchBarActive] = useState(false);
   const [isCartActive, updateIsCartActive] = useState(false);
   const TriangleRef = useRef();
@@ -109,7 +110,7 @@ const StyledHeader = styled.header`
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 4.5rem;
+  padding-left: 6rem;
 
   a {
     color: white;
@@ -123,7 +124,8 @@ const NavButtons = styled.div`
 
   display: flex;
   align-items: center;
-  padding-right: 4.5rem;
+  padding-right: 6rem;
+  /* padding-right: 1rem; */
   * {
     padding-top: 0.3rem;
     margin-left: 0.8rem;
