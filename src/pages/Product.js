@@ -128,6 +128,7 @@ const Product = styled.div`
       ul {
         opacity: 0;
         background: rgba(136, 136, 136);
+        pointer-events: none;
         li {
           color: white;
           &:hover {
@@ -138,6 +139,7 @@ const Product = styled.div`
       }
       .open {
         opacity: 1;
+        pointer-events: all;
       }
     }
     .disabled {

@@ -1,15 +1,31 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+@media screen and (max-width: 1250px) {
+    html{
+    font-size: 14px;
+    .icon{
+        font-size: 1.2rem;
+    }
+}
+}
+@media screen and (max-width: 1060px) {
+    html{
+    font-size: 12px;
+}
+}
+@media screen and (max-width: 800px) {
+    html{
+    font-size: 10px;
+}
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* html{
-    font-size: 8px;
-} */
+
 
 body{
     /* background-color: #111111; */

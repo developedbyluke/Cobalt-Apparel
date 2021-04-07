@@ -37,11 +37,13 @@ const Header = ({
         <Link to="/">Cobalt Apparel</Link>
       </Logo>
       <Nav
+        updateCollection={updateCollection}
         navData={navData}
         ref={TriangleRef}
         SubNavRef={SubNavRef}
         updateNavItemSelected={updateNavItemSelected}
         updateIsNavActive={updateIsNavActive}
+        headingData={navData.filter((i) => i.id === navItemSelected)[0]}
       />
       <NavButtons>
         {/* Currency Options */}
@@ -64,7 +66,7 @@ const Header = ({
             updateIsSearchBarActive(!isSearchBarActive);
           }}
         >
-          <span className="material-icons">search</span>
+          <span className="icon material-icons">search</span>
         </div>
         {/* Shopping Cart Btn */}
         <div
@@ -73,7 +75,7 @@ const Header = ({
             updateIsCartActive(!isCartActive);
           }}
         >
-          <span className="material-icons">shopping_cart</span>
+          <span className="icon material-icons">shopping_cart</span>
         </div>
       </NavButtons>
       <SearchBar isSearchBarActive={isSearchBarActive} />
@@ -111,7 +113,9 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   padding-left: 6rem;
-
+  @media screen and (max-width: 1250px) {
+    padding-left: 2rem;
+  }
   a {
     color: white;
     font-family: 'Caveat', cursive;
@@ -121,10 +125,12 @@ const Logo = styled.div`
 `;
 const NavButtons = styled.div`
   overflow-y: hidden;
-
   display: flex;
   align-items: center;
   padding-right: 6rem;
+  @media screen and (max-width: 1250px) {
+    padding-right: 2rem;
+  }
   /* padding-right: 1rem; */
   * {
     padding-top: 0.3rem;

@@ -94,7 +94,6 @@ const StyledSubNav = styled.div`
       }
     }
   }
-
   h3 {
     margin-bottom: 1.5rem;
     font-size: 1.4rem;

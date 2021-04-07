@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import '../styles/headerToggleClasses.scss';
 
 const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
+  const removeCartItem = (e) => {
+    const id = e.currentTarget.id;
+    updateCartContent(cartContent.filter((item) => item.id !== id));
+  };
+
   return (
     <StyledCart className={isCartActive ? 'show' : 'hide'}>
       <ul>
         {cartContent.map((product) => {
           return (
-            <li>
+            <li key={product.id}>
               <img src={product.img1} alt="" />
               <div className="description">
                 <h3>{product.title}</h3>
@@ -17,7 +22,9 @@ const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
                 </h4>
               </div>
               <h4 className="price">£{product.price / 100}.00</h4>
-              <button>X</button>
+              <button id={product.id} onClick={removeCartItem}>
+                X
+              </button>
             </li>
           );
         })}

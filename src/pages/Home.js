@@ -3,15 +3,22 @@ import Slider from '../components/Swiper';
 import Delivery from '../components/Delivery';
 import ProductThumbnail from '../components/ProductThumbnail';
 import HomePageProducts from '../components/HomePageProducts';
+import styled from 'styled-components';
 
 const Home = ({ sliderData, productData }) => {
   return (
-    <div>
+    <StyledHome>
       <Slider sliderData={sliderData} />
       <Delivery />
       <HomePageProducts products={productData} />
-    </div>
+    </StyledHome>
   );
 };
+
+const StyledHome = styled.div`
+  position: absolute;
+  top: 0;
+  width: 100%;
+`;
 
 export default Home;

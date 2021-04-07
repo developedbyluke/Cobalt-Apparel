@@ -1,9 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as NavTriangle } from '../img/navTriangle.svg';
+import { Link } from 'react-router-dom';
 
 const Nav = React.forwardRef(
-  ({ updateNavItemSelected, updateIsNavActive, SubNavRef }, ref) => {
+  (
+    {
+      updateNavItemSelected,
+      updateIsNavActive,
+      SubNavRef,
+      headingData,
+      updateCollection,
+    },
+    ref
+  ) => {
     const navMouseEnter = (e) => {
       const navElementOffset =
         e.currentTarget.offsetLeft + e.currentTarget.offsetWidth / 2;
@@ -21,23 +31,54 @@ const Nav = React.forwardRef(
       }
     };
 
+    const handleLinkClick = () => {
+      updateCollection(`/collection/${headingData.id}`);
+      updateIsNavActive(false);
+      ref.current.style.opacity = '0';
+    };
+
     return (
       <StyledNav onMouseLeave={navMouseLeave}>
         <ul>
           <li className="start" onMouseEnter={navMouseEnter} id="brands">
-            <a href="#">Brands</a>
+            <Link
+              onClick={handleLinkClick}
+              to={`/collection/${headingData.id}`}
+            >
+              Brands
+            </Link>
           </li>
           <li onMouseEnter={navMouseEnter} id="shoes">
-            <a href="#">Shoes</a>
+            <Link
+              onClick={handleLinkClick}
+              to={`/collection/${headingData.id}`}
+            >
+              Shoes
+            </Link>
           </li>
           <li onMouseEnter={navMouseEnter} id="clothing">
-            <a href="#">Clothing</a>
+            <Link
+              onClick={handleLinkClick}
+              to={`/collection/${headingData.id}`}
+            >
+              Clothing
+            </Link>
           </li>
           <li onMouseEnter={navMouseEnter} id="accessories">
-            <a href="#">Accessories</a>
+            <Link
+              onClick={handleLinkClick}
+              to={`/collection/${headingData.id}`}
+            >
+              Accessories
+            </Link>
           </li>
           <li className="end" onMouseEnter={navMouseEnter} id="sale">
-            <a href="#">Sale</a>
+            <Link
+              onClick={handleLinkClick}
+              to={`/collection/${headingData.id}`}
+            >
+              Sale
+            </Link>
           </li>
         </ul>
         <NavTriangle className="triangle" ref={ref} />
@@ -65,9 +106,15 @@ const StyledNav = styled.nav`
       height: 100%;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1rem;
+      height: 100%;
+      width: 100%;
       padding: 0 2rem;
       color: white;
     }
