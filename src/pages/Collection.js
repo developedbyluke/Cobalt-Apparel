@@ -59,7 +59,8 @@ const Container = styled.div`
 const Collection = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  margin: 0 -0.25rem;
+  grid-gap: 0.5rem;
+  margin-top: 0.5rem;
   @media screen and (max-width: 1250px) {
     grid-template-columns: repeat(4, 1fr);
   }

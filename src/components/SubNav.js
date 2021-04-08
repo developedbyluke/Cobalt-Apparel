@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../styles/headerToggleClasses.scss';
 import { Link } from 'react-router-dom';
 
 const SubNav = React.forwardRef(

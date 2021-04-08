@@ -123,15 +123,6 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 `;
 const Logo = styled.div`
-  @media screen and (max-width: 1060px) {
-    position: absolute;
-    left: 45%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  @media screen and (max-width: 1250px) {
-    padding-left: 2rem;
-  }
   display: flex;
   align-items: center;
   padding-left: 6rem;
@@ -140,7 +131,19 @@ const Logo = styled.div`
     color: white;
     font-family: 'Caveat', cursive;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    @media screen and (max-width: 1060px) {
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 1060px) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-60%, -50%);
+  }
+  @media screen and (max-width: 1250px) {
+    padding-left: 2rem;
   }
 `;
 const NavButtons = styled.div`

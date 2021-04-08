@@ -37,7 +37,7 @@ const Thumbnail = styled(Link)`
     /* max-width: 14rem; */
   }
   cursor: pointer;
-  margin: 0.5rem 0.25rem;
+  /* margin: 0 0.25rem; */
   * {
     width: 100%;
   }

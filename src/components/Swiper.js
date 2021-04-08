@@ -20,7 +20,7 @@ const Slider = ({ sliderData }) => {
     >
       {sliderData.map((item, i) => (
         <SwiperSlide key={i}>
-          <div className="slide-container">
+          <div className="slide-container-for-header">
             <img key={i} src={item.img} alt="" style={{ width: '100%' }} />
             <figcaption className="slide-heading-and-button">
               <h3>{item.header}</h3>

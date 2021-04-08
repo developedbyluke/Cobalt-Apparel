@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../styles/headerToggleClasses.scss';
 
 const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
   const removeCartItem = (e) => {

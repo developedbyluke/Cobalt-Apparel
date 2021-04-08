@@ -15,13 +15,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
-html{
-    overflow-x: hidden;
-    width: 100vw;
-}
-
 body{
-    
     font-family: 'Poppins', sans-serif;
     overscroll-behavior: none;
 }
