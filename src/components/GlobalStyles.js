@@ -9,34 +9,27 @@ const GlobalStyle = createGlobalStyle`
     }
 }
 }
-@media screen and (max-width: 1060px) {
-    html{
-    font-size: 12px;
-}
-}
-@media screen and (max-width: 800px) {
-    html{
-    font-size: 10px;
-}
-}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+html{
+    overflow-x: hidden;
+    width: 100vw;
+}
 
 body{
-    /* background-color: #111111; */
+    
     font-family: 'Poppins', sans-serif;
     overscroll-behavior: none;
-    overflow-x: hidden;
 }
 
 button{
 
     border: none;
+    font-size: 0.85rem;
     outline: none;
     width: 8rem;
     height: 2rem;

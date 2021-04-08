@@ -88,6 +88,7 @@ const ProductPage = ({ productData, updateCartContent }) => {
 };
 
 const Product = styled.div`
+  overflow-x: hidden;
   padding: 8rem 6rem;
   display: flex;
   .product-page-left,

@@ -19,6 +19,7 @@ const StyledHome = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
+  overflow-x: hidden;
 `;
 
 export default Home;

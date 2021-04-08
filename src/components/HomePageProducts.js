@@ -26,6 +26,8 @@ const HomePageProducts = ({ products }) => {
 };
 
 const HomeProducts = styled.section`
+  overflow-x: hidden;
+
   padding: 0 6rem;
 `;
 const SectionContainer = styled.div`

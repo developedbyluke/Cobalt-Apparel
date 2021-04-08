@@ -88,6 +88,11 @@ const Nav = React.forwardRef(
 );
 
 const StyledNav = styled.nav`
+  overflow-x: hidden;
+
+  @media screen and (max-width: 1060px) {
+    display: none;
+  }
   position: relative;
   svg {
     position: absolute;

@@ -47,7 +47,7 @@ const Header = ({
       />
       <NavButtons>
         {/* Currency Options */}
-        <div>
+        <div className="currency">
           <CurrencyOptions name="cars" id="cars">
             <option value="0">GBP</option>
             <option value="1">AUD</option>
@@ -61,6 +61,7 @@ const Header = ({
         </div>
         {/* Search Bar Btn */}
         <div
+          className="search-button"
           onClick={() => {
             updateIsCartActive(false);
             updateIsSearchBarActive(!isSearchBarActive);
@@ -76,6 +77,16 @@ const Header = ({
           }}
         >
           <span className="icon material-icons">shopping_cart</span>
+        </div>
+        {/* Nav Burger */}
+        <div
+          className="menu-bar"
+          onClick={() => {
+            updateIsSearchBarActive(false);
+            updateIsCartActive(!isCartActive);
+          }}
+        >
+          <span className="icon material-icons">menu</span>
         </div>
       </NavButtons>
       <SearchBar isSearchBarActive={isSearchBarActive} />
@@ -98,10 +109,12 @@ const Header = ({
 };
 
 const StyledHeader = styled.header`
+  width: 100%;
   color: white;
   z-index: 2;
   position: absolute;
-  width: 100%;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.783);
   height: 4rem;
   display: flex;
@@ -110,32 +123,60 @@ const StyledHeader = styled.header`
   justify-content: space-between;
 `;
 const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 6rem;
+  @media screen and (max-width: 1060px) {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
   @media screen and (max-width: 1250px) {
     padding-left: 2rem;
   }
+  display: flex;
+  align-items: center;
+  padding-left: 6rem;
+  height: 100%;
   a {
     color: white;
     font-family: 'Caveat', cursive;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 const NavButtons = styled.div`
+  @media screen and (max-width: 1060px) {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 0rem;
+  }
   overflow-y: hidden;
   display: flex;
   align-items: center;
-  padding-right: 6rem;
-  @media screen and (max-width: 1250px) {
-    padding-right: 2rem;
-  }
-  /* padding-right: 1rem; */
+  padding-right: 2rem;
   * {
     padding-top: 0.3rem;
-    margin-left: 0.8rem;
+    margin: 0 0.5rem;
     cursor: pointer;
+  }
+  .menu-bar {
+    display: none;
+    @media screen and (max-width: 1060px) {
+      display: initial;
+    }
+  }
+  .search-button {
+    display: initial;
+    @media screen and (max-width: 1060px) {
+      display: none;
+    }
+  }
+  .currency {
+    display: initial;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
 `;
 

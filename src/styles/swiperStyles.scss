@@ -36,15 +36,27 @@
   h3 {
     text-transform: uppercase;
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     color: gainsboro;
   }
   h2 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    // margin-bottom: 1.5rem;
     &:hover {
       color: #02e1f5;
       cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 862px) {
+    h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      display: none;
+    }
+    h2 {
+      font-size: 1rem;
     }
   }
 }
