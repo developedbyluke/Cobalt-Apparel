@@ -32,7 +32,7 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="reccomended">
             <h4>Recommended</h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.2}>
+            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
