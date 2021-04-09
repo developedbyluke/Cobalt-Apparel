@@ -37,6 +37,7 @@ const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
 };
 
 const StyledCart = styled.div`
+  overflow-x: hidden;
   position: absolute;
   background: #ebebe6;
   top: 4rem;

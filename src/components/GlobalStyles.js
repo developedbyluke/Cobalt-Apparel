@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
 body{
     font-family: 'Poppins', sans-serif;
     overscroll-behavior: none;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 button{

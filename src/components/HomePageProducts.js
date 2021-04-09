@@ -64,33 +64,24 @@ const HomeProducts = styled.section`
   }
 
   .Swiper {
+    overflow-x: hidden;
     opacity: 0;
     position: absolute;
     top: 2rem;
     pointer-events: none;
     * {
-      width: 13rem;
+      width: 11rem;
     }
     @media screen and (max-width: 700px) {
       opacity: 1;
       pointer-events: initial;
     }
   }
-
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-  }
-
-  .slide-container {
-    /* width: 13rem; */
-  }
 `;
 const SectionContainer = styled.div`
   height: 23rem;
   position: relative;
-  margin: 3rem 0;
+  margin: 4rem 0;
   h4 {
     margin-bottom: 1rem;
     font-weight: 400;
@@ -99,7 +90,7 @@ const SectionContainer = styled.div`
   }
   .swiper {
     position: absolute;
-    top: 0;
+    top: 3;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.5rem;
