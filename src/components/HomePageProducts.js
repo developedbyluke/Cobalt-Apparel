@@ -5,22 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 
 const HomePageProducts = ({ products }) => {
-  // const params = {
-  //   slidesPerView: 3,
-  //   spaceBetween: 30,
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     clickable: true,
-  //   },
-  // };
   return (
     <>
       {products && (
         <HomeProducts>
           <SectionContainer className="latest">
             <h4>Latest </h4>
-
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={1}>
+            {/* Hides unless app is in mobile view */}
+            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
@@ -39,7 +31,8 @@ const HomePageProducts = ({ products }) => {
 
           <SectionContainer className="reccomended">
             <h4>Recommended</h4>
-            <Swiper className="Swiper">
+            {/* Hides unless app is in mobile view */}
+            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.2}>
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
@@ -65,22 +58,25 @@ const HomePageProducts = ({ products }) => {
 };
 
 const HomeProducts = styled.section`
-  overflow-x: hidden;
   padding: 0 6rem;
-  position: relative;
+  @media screen and (max-width: 700px) {
+    padding: 0 1rem;
+  }
+
   .Swiper {
-    /* display: none; */
+    opacity: 0;
+    position: absolute;
+    top: 2rem;
+    pointer-events: none;
     * {
       width: 13rem;
     }
     @media screen and (max-width: 700px) {
-      display: initial;
+      opacity: 1;
+      pointer-events: initial;
     }
   }
-  .swiper-wrapper {
-    background: blue;
-    /* width: 100%; */
-  }
+
   .swiper-container {
     width: 100%;
     height: 100%;
@@ -92,6 +88,8 @@ const HomeProducts = styled.section`
   }
 `;
 const SectionContainer = styled.div`
+  height: 23rem;
+  position: relative;
   margin: 3rem 0;
   h4 {
     margin-bottom: 1rem;
@@ -100,6 +98,8 @@ const SectionContainer = styled.div`
     text-transform: uppercase;
   }
   .swiper {
+    position: absolute;
+    top: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.5rem;
