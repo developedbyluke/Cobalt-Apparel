@@ -102,6 +102,11 @@ const StyledCart = styled.div`
       }
     }
   }
+  @media screen and (max-width: 700px) {
+    max-height: 100vh;
+    height: calc(100vh - 4rem);
+    width: 100%;
+  }
 `;
 
 export default Cart;

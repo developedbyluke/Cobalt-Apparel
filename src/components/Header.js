@@ -112,7 +112,7 @@ const StyledHeader = styled.header`
   width: 100%;
   color: white;
   z-index: 2;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.783);

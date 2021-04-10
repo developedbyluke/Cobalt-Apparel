@@ -55,7 +55,7 @@ export const siteData = {
       img: homeSlider3,
       header: 'New Brand',
       title: 'Wayward Axle',
-      subtitle: 'LDN',
+      subtitle: 'Ldn',
     },
     {
       img: homeSlider4,

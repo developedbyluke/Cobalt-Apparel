@@ -12,7 +12,7 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="latest">
             <h4>Latest </h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
+            <Swiper className="Swiper" spaceBetween={10} slidesPerView="auto">
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
@@ -32,7 +32,7 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="reccomended">
             <h4>Recommended</h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
+            <Swiper className="Swiper" spaceBetween={10} slidesPerView="auto">
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
@@ -67,7 +67,7 @@ const HomeProducts = styled.section`
     overflow-x: hidden;
     opacity: 0;
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     pointer-events: none;
     * {
       width: 11rem;
@@ -88,6 +88,10 @@ const SectionContainer = styled.div`
     font-size: 0.9rem;
     text-transform: uppercase;
   }
+  .swiper-slide {
+    width: auto;
+    margin-right: 1rem;
+  }
   .swiper {
     position: absolute;
     top: 3;
@@ -97,6 +101,10 @@ const SectionContainer = styled.div`
     @media screen and (max-width: 700px) {
       display: none;
     }
+  }
+  @media screen and (max-width: 700px) {
+    margin: 0rem;
+    padding: 1rem 0;
   }
 `;
 

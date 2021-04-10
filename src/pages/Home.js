@@ -1,7 +1,6 @@
 import React from 'react';
 import Slider from '../components/Swiper';
 import Delivery from '../components/Delivery';
-import ProductThumbnail from '../components/ProductThumbnail';
 import HomePageProducts from '../components/HomePageProducts';
 import styled from 'styled-components';
 

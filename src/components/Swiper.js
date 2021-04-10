@@ -4,7 +4,6 @@ import SwiperCore, { Pagination, EffectFade, Autoplay } from 'swiper';
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
 import '../styles/swiperStyles.scss';
-// Import imgs
 
 SwiperCore.use([Pagination, EffectFade, Autoplay]);
 

@@ -117,6 +117,7 @@ const Product = styled.div`
       display: inline-block;
       width: 100%;
       position: relative;
+      border: 1px solid #32323222;
     }
     p {
       font-size: 1rem;
@@ -155,6 +156,21 @@ const Product = styled.div`
       top: 0;
       height: 100%;
       font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    padding: 8rem 2rem;
+    .product-page-left {
+      h3 {
+        font-size: 1.2rem;
+      }
+      button {
+        /* color: #323232; */
+        border: 1px solid #32323264;
+      }
+      p {
+        font-size: 0.8rem;
+      }
     }
   }
 `;
