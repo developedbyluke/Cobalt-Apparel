@@ -90,7 +90,7 @@ const SectionContainer = styled.div`
   }
   .swiper-slide {
     width: auto;
-    margin-right: 1rem;
+    margin-right: 0.4rem;
   }
   .swiper {
     position: absolute;

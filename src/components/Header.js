@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Nav from '../components/Nav';
+import MobileNav from '../components/MobileNav';
 import SearchBar from '../components/SearchBar';
 import SubNav from '../components/SubNav';
 import '../styles/headerToggleClasses.scss';
@@ -45,6 +46,7 @@ const Header = ({
         updateIsNavActive={updateIsNavActive}
         headingData={navData.filter((i) => i.id === navItemSelected)[0]}
       />
+      <MobileNav navData={navData} />
       <NavButtons>
         {/* Currency Options */}
         <div className="currency">
