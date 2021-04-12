@@ -14,16 +14,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     font-family: 'Poppins', sans-serif;
     overscroll-behavior: none;
     overflow-x: hidden;
     max-width: 100vw;
+    /* Variables */
+    --main-blue: #02e1f5;
 }
-
 button{
-
     border: none;
     font-size: 0.85rem;
     outline: none;
@@ -46,7 +45,6 @@ h3{
     font-size: 1.5rem;
 }
 h4{
-
 }
 span{
     
@@ -67,7 +65,6 @@ ul{
 img{
     display: block;
 }
-
 `;
 
 export default GlobalStyle;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { siteData } from '../SiteData';
 import { Link } from 'react-router-dom';
 
 const ProductThumbnail = ({ product }) => {

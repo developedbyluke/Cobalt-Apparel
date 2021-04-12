@@ -49,7 +49,7 @@ const Header = ({
       <MobileNav navData={navData} />
       <NavButtons>
         {/* Currency Options */}
-        <div className="currency">
+        <div className="currency nav-button">
           <CurrencyOptions name="cars" id="cars">
             <option value="0">GBP</option>
             <option value="1">AUD</option>
@@ -63,7 +63,7 @@ const Header = ({
         </div>
         {/* Search Bar Btn */}
         <div
-          className="search-button"
+          className="search-button nav-button"
           onClick={() => {
             updateIsCartActive(false);
             updateIsSearchBarActive(!isSearchBarActive);
@@ -73,6 +73,7 @@ const Header = ({
         </div>
         {/* Shopping Cart Btn */}
         <div
+          className="nav-button"
           onClick={() => {
             updateIsSearchBarActive(false);
             updateIsCartActive(!isCartActive);
@@ -82,7 +83,7 @@ const Header = ({
         </div>
         {/* Nav Burger */}
         <div
-          className="menu-bar"
+          className="menu-bar nav-button"
           onClick={() => {
             updateIsSearchBarActive(false);
             updateIsCartActive(!isCartActive);
@@ -181,6 +182,11 @@ const NavButtons = styled.div`
     display: initial;
     @media screen and (max-width: 600px) {
       display: none;
+    }
+  }
+  .nav-button {
+    &:hover {
+      color: var(--main-blue);
     }
   }
 `;
