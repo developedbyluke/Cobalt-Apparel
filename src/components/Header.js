@@ -46,7 +46,7 @@ const Header = ({
         updateIsNavActive={updateIsNavActive}
         headingData={navData.filter((i) => i.id === navItemSelected)[0]}
       />
-      <MobileNav navData={navData} />
+      {/* <MobileNav navData={navData} /> */}
       <NavButtons>
         {/* Currency Options */}
         <div className="currency nav-button">
@@ -118,7 +118,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.783);
+  background-color: rgba(0, 0, 0, 0.8);
   height: 4rem;
   display: flex;
   align-items: center;

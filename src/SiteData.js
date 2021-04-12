@@ -46,6 +46,12 @@ export const siteData = {
   ],
   slider: [
     {
+      img: homeSlider1,
+      header: 'Latest Footwear',
+      title: 'Nike SB Janoski',
+      subtitle: 'Aquamarine',
+    },
+    {
       img: homeSlider2,
       header: 'Latest Footwear',
       title: 'Adidas 3MC Shoes',
@@ -62,12 +68,6 @@ export const siteData = {
       header: 'Sale',
       title: "Summer '20",
       subtitle: 'Clearance',
-    },
-    {
-      img: homeSlider1,
-      header: 'Latest Footwear',
-      title: 'Nike SB Janoski',
-      subtitle: 'Aquamarine',
     },
   ],
   products: [

@@ -3,6 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 @media screen and (max-width: 1250px) {
     html{
+    font-size: 12px;
+    .icon{
+        font-size: 1.2rem;
+    }
+}
+}
+@media screen and (max-width: 1500px) {
+    html{
     font-size: 14px;
     .icon{
         font-size: 1.2rem;

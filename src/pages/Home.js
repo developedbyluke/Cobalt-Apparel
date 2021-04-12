@@ -3,6 +3,7 @@ import Slider from '../components/Swiper';
 import Delivery from '../components/Delivery';
 import HomePageProducts from '../components/HomePageProducts';
 import styled from 'styled-components';
+import SubscribeBanner from '../components/SubscribeBanner';
 
 const Home = ({ sliderData, productData }) => {
   return (
@@ -10,11 +11,13 @@ const Home = ({ sliderData, productData }) => {
       <Slider sliderData={sliderData} />
       <Delivery />
       <HomePageProducts products={productData} />
+      <SubscribeBanner />
     </StyledHome>
   );
 };
 
 const StyledHome = styled.div`
+  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;

@@ -58,34 +58,20 @@ const HomePageProducts = ({ products }) => {
 };
 
 const HomeProducts = styled.section`
-  padding: 0 6rem;
+  border: 1px solid blue;
   @media screen and (max-width: 700px) {
-    padding: 0 1rem;
-  }
-  .Swiper {
-    overflow-x: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 2rem;
-    pointer-events: none;
-    * {
-      width: 11rem;
-    }
-    @media screen and (max-width: 700px) {
-      opacity: 1;
-      pointer-events: initial;
-    }
   }
 `;
 const SectionContainer = styled.div`
   @media screen and (max-width: 1500px) {
-    height: 23rem;
+    /* height: 23rem; */
   }
-  height: 30rem;
+  /* height: 30rem; */
   position: relative;
-  margin: 4rem 0;
+  border: 1px solid red;
+
   h4 {
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     font-weight: 400;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -98,6 +84,20 @@ const SectionContainer = styled.div`
     grid-gap: 0.5rem;
     @media screen and (max-width: 700px) {
       display: none;
+    }
+  }
+  .Swiper {
+    /* overflow-x: hidden; */
+    opacity: 0;
+    position: absolute;
+    /* top: 2rem; */
+    pointer-events: none;
+    * {
+      width: 11rem;
+    }
+    @media screen and (max-width: 700px) {
+      opacity: 1;
+      pointer-events: initial;
     }
   }
 `;
