@@ -68,7 +68,7 @@ const StyledSubNav = styled.div`
     font-weight: 300;
     text-transform: capitalize;
     margin: 1rem 0;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.5);
   }
   .sub-nav-list {
     margin-bottom: 1rem;

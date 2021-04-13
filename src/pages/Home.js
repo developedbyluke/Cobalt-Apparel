@@ -8,7 +8,7 @@ import SubscribeBanner from '../components/SubscribeBanner';
 const Home = ({ sliderData, productData }) => {
   return (
     <StyledHome>
-      <Slider sliderData={sliderData} />
+      <Slider className="swiper" sliderData={sliderData} />
       <Delivery />
       <HomePageProducts products={productData} />
       <SubscribeBanner />
@@ -18,8 +18,6 @@ const Home = ({ sliderData, productData }) => {
 
 const StyledHome = styled.div`
   height: 100%;
-  position: absolute;
-  top: 0;
   width: 100%;
   overflow-x: hidden;
 `;

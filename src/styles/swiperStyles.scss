@@ -1,9 +1,11 @@
 .swiper-container {
+  // margin-top: 4rem;
   width: 100vw;
+  z-index: -10;
 }
 
 .slide-container-for-header {
-  position: relative;
+  // position: relative;
   img {
     filter: brightness(60%);
     @media screen and (max-width: 700px) {
@@ -14,7 +16,6 @@
     }
   }
 }
-
 .slide-heading-and-button {
   position: absolute;
   left: 0;
@@ -57,6 +58,10 @@
     &:hover {
       color: #02e1f5;
       cursor: pointer;
+    }
+    @media screen and (max-width: 700px) {
+      font-size: 1rem;
+      line-height: 2rem;
     }
   }
   @media screen and (max-width: 862px) {

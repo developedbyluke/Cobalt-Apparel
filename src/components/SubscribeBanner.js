@@ -34,6 +34,7 @@ const StyledBanner = styled.div`
   }
   .text-container {
     @media screen and (max-width: 1250px) {
+      font-size: 1rem;
       width: 100%;
       form {
         width: 80%;

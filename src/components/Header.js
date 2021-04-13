@@ -117,18 +117,17 @@ const StyledHeader = styled.header`
   z-index: 2;
   position: fixed;
   top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.883);
   height: 4rem;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 3rem;
 `;
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 6rem;
   height: 100%;
   a {
     color: white;
@@ -145,9 +144,9 @@ const Logo = styled.div`
     top: 50%;
     transform: translate(-60%, -50%);
   }
-  @media screen and (max-width: 1250px) {
+  /* @media screen and (max-width: 1250px) {
     padding-left: 2rem;
-  }
+  } */
 `;
 const NavButtons = styled.div`
   @media screen and (max-width: 1060px) {
@@ -155,15 +154,14 @@ const NavButtons = styled.div`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    padding-right: 0rem;
   }
   overflow-y: hidden;
   display: flex;
   align-items: center;
-  padding-right: 2rem;
+  margin: 0 -0.3rem;
   * {
     padding-top: 0.3rem;
-    margin: 0 0.5rem;
+    margin: 0 0.3rem;
     cursor: pointer;
   }
   .menu-bar {

@@ -12,11 +12,11 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="latest">
             <h4>Latest </h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
+            <Swiper className="Swiper" spaceBetween={20} slidesPerView={3.5}>
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
-                    <ProductThumbnail key={i} product={product} />
+                    <ProductThumbnail className="x" key={i} product={product} />
                   </div>
                 </SwiperSlide>
               ))}
@@ -32,7 +32,7 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="recommended">
             <h4>Recommended</h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={50} slidesPerView={2.5}>
+            <Swiper className="Swiper" spaceBetween={20} slidesPerView={3.5}>
               {products.map((product, i) => (
                 <SwiperSlide key={i}>
                   <div className="slide-container">
@@ -58,42 +58,48 @@ const HomePageProducts = ({ products }) => {
 };
 
 const HomeProducts = styled.section`
-  border: 1px solid blue;
+  padding-bottom: 3rem;
+  @media screen and (max-width: 1000px) {
+    padding-bottom: 2rem;
+  }
   @media screen and (max-width: 700px) {
+    padding-bottom: 1rem;
   }
 `;
 const SectionContainer = styled.div`
-  @media screen and (max-width: 1500px) {
-    /* height: 23rem; */
+  /* border: 1px solid blue; */
+  @media screen and (max-width: 1000px) {
+    padding: 2rem;
   }
-  /* height: 30rem; */
+  @media screen and (max-width: 700px) {
+    padding: 1rem 1rem 0 1rem;
+    height: 20rem;
+  }
   position: relative;
-  border: 1px solid red;
-
+  padding: 3rem 3rem 0 3rem;
   h4 {
-    /* margin-bottom: 1rem; */
     font-weight: 400;
+    margin-bottom: 1rem;
     font-size: 0.9rem;
     text-transform: uppercase;
   }
   .product-list {
-    /* position: absolute;
-    top: 3; */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.5rem;
     @media screen and (max-width: 700px) {
-      display: none;
+      pointer-events: none;
+      opacity: 0;
     }
   }
   .Swiper {
-    /* overflow-x: hidden; */
     opacity: 0;
     position: absolute;
-    /* top: 2rem; */
     pointer-events: none;
+    padding-right: 2rem;
+    height: 100%;
     * {
-      width: 11rem;
+      /* width: 11rem; */
     }
     @media screen and (max-width: 700px) {
       opacity: 1;

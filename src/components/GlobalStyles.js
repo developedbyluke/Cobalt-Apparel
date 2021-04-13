@@ -1,17 +1,18 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
 @media screen and (max-width: 1250px) {
     html{
     font-size: 12px;
     .icon{
         font-size: 1.2rem;
     }
-}
+}   
 }
 @media screen and (max-width: 1500px) {
     html{
-    font-size: 14px;
+    font-size: 15px;
     .icon{
         font-size: 1.2rem;
     }
@@ -38,7 +39,9 @@ button{
     height: 2rem;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+
     &:hover{
         background-color: #02e1f5;
         cursor: pointer;

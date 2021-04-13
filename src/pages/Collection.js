@@ -42,7 +42,6 @@ const CollectionPage = ({ productData, collection, updateIsNavActive }) => {
 };
 
 const Container = styled.div`
-  overflow-x: hidden;
   position: absolute;
   top: 6rem;
   width: 100%;

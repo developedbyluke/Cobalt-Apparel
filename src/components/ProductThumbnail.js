@@ -67,6 +67,9 @@ const Thumbnail = styled(Link)`
     span {
       font-weight: 300;
       color: rgba(0, 0, 0, 0.7);
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
     }
   }
   .price {

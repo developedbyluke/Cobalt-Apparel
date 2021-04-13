@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductPage from './pages/Product';
 import CollectionPage from './pages/Collection';
 import ScrollToTop from './components/ScrollToTop';
+import Delivery from './components/Delivery';
 
 function App() {
   const cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <div className="App">
         <GlobalStyle />
         <Header
