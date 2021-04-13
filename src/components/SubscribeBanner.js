@@ -18,11 +18,13 @@ const SubscribeBanner = () => {
 };
 
 const StyledBanner = styled.div`
-  width: 100vw;
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
-
+  @media screen and (max-width: 1250px) {
+    align-items: flex-end;
+  }
   height: 42rem;
   img {
     position: absolute;
@@ -34,18 +36,25 @@ const StyledBanner = styled.div`
   }
   .text-container {
     @media screen and (max-width: 1250px) {
-      font-size: 1rem;
       width: 100%;
-      form {
-        width: 80%;
+
+      button {
+        background: white;
+        height: 1.9rem;
+        border-radius: 3px;
+      }
+      h2 {
+        font-size: 2rem;
+        line-height: 2.8rem;
       }
     }
     padding: 2rem;
-    background: black;
     color: white;
+    background: black;
     width: 30%;
     form {
       display: flex;
+      align-items: center;
       margin: 0 -0.2rem;
       * {
         margin: 0 0.2rem;

@@ -12,6 +12,7 @@ const Home = ({ sliderData, productData }) => {
       <Delivery />
       <HomePageProducts products={productData} />
       <SubscribeBanner />
+      <Delivery />
     </StyledHome>
   );
 };
