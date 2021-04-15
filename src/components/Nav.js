@@ -91,7 +91,15 @@ const StyledNav = styled.nav`
   overflow-x: hidden;
 
   @media screen and (max-width: 1060px) {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    height: calc(100vh - 4rem);
+    background: var(--main-blue);
+    display: flex;
+    align-items: center;
+    width: 100vw;
   }
   position: relative;
   svg {
@@ -107,6 +115,11 @@ const StyledNav = styled.nav`
     align-items: center;
     cursor: pointer;
     height: 4rem;
+    @media screen and (max-width: 1060px) {
+      flex-direction: column;
+      height: 80%;
+      width: 100%;
+    }
     li {
       height: 100%;
       display: flex;
@@ -122,10 +135,16 @@ const StyledNav = styled.nav`
       width: 100%;
       padding: 0 2rem;
       color: white;
+      @media screen and (max-width: 1060px) {
+        font-size: 1.4rem;
+      }
     }
     li::after {
       content: '|';
       color: grey;
+      @media screen and (max-width: 1060px) {
+        content: '';
+      }
     }
     .end {
       ::after {

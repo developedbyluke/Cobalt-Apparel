@@ -142,7 +142,7 @@ const Logo = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-60%, -50%);
+    transform: translate(-50%, -50%);
   }
   /* @media screen and (max-width: 1250px) {
     padding-left: 2rem;
@@ -151,7 +151,7 @@ const Logo = styled.div`
 const NavButtons = styled.div`
   @media screen and (max-width: 1060px) {
     position: absolute;
-    right: 0;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
   }
