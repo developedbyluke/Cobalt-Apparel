@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -18,6 +18,10 @@ const SubNav = React.forwardRef(
       TriangleRef.current.style.opacity = '0';
       updateIsNavActive(false);
     };
+
+    useEffect(() => {
+      console.log(window.innerWidth);
+    }, [window.innerWidth]);
 
     return (
       <StyledSubNav
@@ -59,6 +63,7 @@ const SubNav = React.forwardRef(
 const StyledSubNav = styled.div`
   position: absolute;
   top: 4rem;
+  left: 0;
   background: #02e1f5;
   width: 100vw;
   color: black;

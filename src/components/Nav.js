@@ -91,7 +91,7 @@ const StyledNav = styled.nav`
   overflow-x: hidden;
 
   @media screen and (max-width: 1060px) {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 4rem;
     left: 0;
@@ -137,6 +137,8 @@ const StyledNav = styled.nav`
       color: white;
       @media screen and (max-width: 1060px) {
         font-size: 1.4rem;
+        width: 10rem;
+        border: 1px solid blue;
       }
     }
     li::after {
