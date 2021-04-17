@@ -91,7 +91,8 @@ const StyledNav = styled.nav`
   overflow-x: hidden;
 
   @media screen and (max-width: 1060px) {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 4rem;
     left: 0;
