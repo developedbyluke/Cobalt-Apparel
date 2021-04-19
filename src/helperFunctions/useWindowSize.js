@@ -16,7 +16,7 @@ export default function useWindowSize() {
         width: window.innerWidth,
         height: window.innerHeight,
       });
-      window.innerWidth <= 1062
+      window.innerWidth <= 1160
         ? updateIsMobileViewActive(true)
         : updateIsMobileViewActive(false);
     }

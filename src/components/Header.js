@@ -126,8 +126,12 @@ const StyledHeader = styled.header`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 3rem;
+  padding: 0 var(--large-screen-padding);
+  @media screen and (max-width: 1160px) {
+    padding: 0 var(--medium-screen-padding);
+  }
 `;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -137,11 +141,11 @@ const Logo = styled.div`
     font-family: 'Caveat', cursive;
     font-weight: 400;
     font-size: 2.2rem;
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 1160px) {
       font-size: 2rem;
     }
   }
-  @media screen and (max-width: 1060px) {
+  @media screen and (max-width: 1160px) {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -151,8 +155,9 @@ const Logo = styled.div`
     padding-left: 2rem;
   } */
 `;
+
 const NavButtons = styled.div`
-  @media screen and (max-width: 1060px) {
+  @media screen and (max-width: 1160px) {
     position: absolute;
     right: 1rem;
     top: 50%;
@@ -169,13 +174,13 @@ const NavButtons = styled.div`
   }
   .menu-bar {
     display: none;
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 1160px) {
       display: initial;
     }
   }
   .search-button {
     display: initial;
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 1160px) {
       display: none;
     }
   }

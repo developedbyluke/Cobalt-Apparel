@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
+
+
 @media screen and (max-width: 1250px) {
     html{
     font-size: 12px;
@@ -28,8 +30,13 @@ body{
     overscroll-behavior: none;
     overflow-x: hidden;
     max-width: 100vw;
+
     /* Variables */
     --main-blue: #02e1f5;
+    --large-screen-padding: 6rem;
+    --medium-screen-padding: 3rem;
+    --mobile-screen-padding: 1rem;
+    
 }
 button{
     border: none;

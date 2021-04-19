@@ -10,18 +10,7 @@ const HomePageProducts = ({ products }) => {
       {products && (
         <HomeProducts>
           <SectionContainer className="latest">
-            <h4>Latest </h4>
-            {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={20} slidesPerView={3.5}>
-              {products.map((product, i) => (
-                <SwiperSlide key={i}>
-                  <div className="slide-container">
-                    <ProductThumbnail className="x" key={i} product={product} />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
+            <h4 className="product-section-header">Latest</h4>
             <div className="product-list">
               {products.map((product, i) => (
                 <ProductThumbnail key={i} product={product} />
@@ -30,21 +19,7 @@ const HomePageProducts = ({ products }) => {
           </SectionContainer>
 
           <SectionContainer className="recommended">
-            <h4>Recommended</h4>
-            {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={20} slidesPerView={3.5}>
-              {products.map((product, i) => (
-                <SwiperSlide key={i}>
-                  <div className="slide-container">
-                    <ProductThumbnail
-                      className="TN"
-                      key={i}
-                      product={product}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <h4 className="product-section-header">Recommended</h4>
             <div className="product-list">
               {products.map((product, i) => (
                 <ProductThumbnail key={i} product={product} />
@@ -58,28 +33,16 @@ const HomePageProducts = ({ products }) => {
 };
 
 const HomeProducts = styled.section`
-  padding-bottom: 3rem;
-  @media screen and (max-width: 1000px) {
-    padding-bottom: 2rem;
-  }
+  padding: 0 var(--large-screen-padding);
   @media screen and (max-width: 700px) {
-    padding-bottom: 1rem;
+    display: none;
   }
 `;
 const SectionContainer = styled.div`
-  /* border: 1px solid blue; */
-  @media screen and (max-width: 1000px) {
-    padding: 2rem;
-  }
-  @media screen and (max-width: 700px) {
-    padding: 1rem 1rem 0 1rem;
-    height: 20rem;
-  }
-  position: relative;
-  padding: 3rem 3rem 0 3rem;
-  h4 {
-    font-weight: 400;
+  margin: 3rem 0;
+  .product-section-header {
     margin-bottom: 1rem;
+    font-weight: 400;
     font-size: 0.9rem;
     text-transform: uppercase;
   }
@@ -87,24 +50,6 @@ const SectionContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 0.5rem;
-    @media screen and (max-width: 700px) {
-      pointer-events: none;
-      opacity: 0;
-    }
-  }
-  .Swiper {
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-    padding-right: 2rem;
-    height: 100%;
-    * {
-      /* width: 11rem; */
-    }
-    @media screen and (max-width: 700px) {
-      opacity: 1;
-      pointer-events: initial;
-    }
   }
 `;
 

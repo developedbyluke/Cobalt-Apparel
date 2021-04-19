@@ -32,11 +32,7 @@ const ProductThumbnail = ({ product }) => {
 };
 
 const Thumbnail = styled(Link)`
-  @media screen and (max-width: 1500px) {
-    /* max-width: 14rem; */
-  }
   cursor: pointer;
-  /* margin: 0 0.25rem; */
   * {
     width: 100%;
   }
