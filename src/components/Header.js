@@ -22,6 +22,7 @@ const Header = ({
   const [navItemSelected, updateNavItemSelected] = useState('brands');
   const [isSearchBarActive, updateIsSearchBarActive] = useState(false);
   const [isCartActive, updateIsCartActive] = useState(false);
+  const [isMobileNavActive, updateIsMobileNavActive] = useState(false);
   const TriangleRef = useRef();
   const SubNavRef = useRef();
 
@@ -45,6 +46,7 @@ const Header = ({
         updateNavItemSelected={updateNavItemSelected}
         updateIsNavActive={updateIsNavActive}
         headingData={navData.filter((i) => i.id === navItemSelected)[0]}
+        isMobileNavActive={isMobileNavActive}
       />
       {/* <MobileNav navData={navData} /> */}
       <NavButtons>
@@ -86,7 +88,8 @@ const Header = ({
           className="menu-bar nav-button"
           onClick={() => {
             updateIsSearchBarActive(false);
-            updateIsCartActive(!isCartActive);
+            // updateIsCartActive(!isCartActive);
+            updateIsMobileNavActive(!isMobileNavActive);
           }}
         >
           <span className="icon material-icons">menu</span>

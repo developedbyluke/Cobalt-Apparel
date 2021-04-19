@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as NavTriangle } from '../img/navTriangle.svg';
 import { Link } from 'react-router-dom';
+import useWindowSize from '../helperFunctions/useWindowSize';
+import '../styles/headerToggleClasses.scss';
 
 const Nav = React.forwardRef(
   (
@@ -11,10 +13,15 @@ const Nav = React.forwardRef(
       SubNavRef,
       headingData,
       updateCollection,
+      isMobileNavActive,
     },
     ref
   ) => {
+    // useWindowSize exported from helperFuntions
+    const isWindowSizeInMobile = useWindowSize();
+    const [shouldNavShow, updateShouldNavShow] = useState(true);
     const navMouseEnter = (e) => {
+      if (isWindowSizeInMobile) return;
       const navElementOffset =
         e.currentTarget.offsetLeft + e.currentTarget.offsetWidth / 2;
       ref.current.style.left = `${navElementOffset}px`;
@@ -36,9 +43,19 @@ const Nav = React.forwardRef(
       updateIsNavActive(false);
       ref.current.style.opacity = '0';
     };
+    useEffect(() => {
+      if (!isWindowSizeInMobile) updateShouldNavShow(true);
+      if (isWindowSizeInMobile && isMobileNavActive) updateShouldNavShow(true);
+      if (isWindowSizeInMobile && !isMobileNavActive)
+        updateShouldNavShow(false);
+    }, [isMobileNavActive, isWindowSizeInMobile]);
 
+    console.log({ isMobileNavActive });
     return (
-      <StyledNav onMouseLeave={navMouseLeave}>
+      <StyledNav
+        onMouseLeave={navMouseLeave}
+        className={shouldNavShow ? 'show' : 'hide'}
+      >
         <ul>
           <li className="start" onMouseEnter={navMouseEnter} id="brands">
             <Link
@@ -91,8 +108,6 @@ const StyledNav = styled.nav`
   overflow-x: hidden;
 
   @media screen and (max-width: 1060px) {
-    opacity: 0;
-    pointer-events: none;
     position: absolute;
     top: 4rem;
     left: 0;
@@ -139,7 +154,6 @@ const StyledNav = styled.nav`
       @media screen and (max-width: 1060px) {
         font-size: 1.4rem;
         width: 10rem;
-        border: 1px solid blue;
       }
     }
     li::after {

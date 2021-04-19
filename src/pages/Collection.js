@@ -47,6 +47,10 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   padding: 0 6rem;
+  @media screen and (max-width: 750px) {
+    padding: 2rem;
+    top: 2rem;
+  }
   h3 {
     color: rgba(0, 0, 0, 0.7);
     margin: 1rem 0;
