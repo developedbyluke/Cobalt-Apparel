@@ -9,29 +9,34 @@ const Cart = ({ isCartActive, cartContent, updateCartContent }) => {
 
   return (
     <StyledCart className={isCartActive ? 'show' : 'hide'}>
-      <ul>
-        {cartContent.map((product) => {
-          return (
-            <li key={product.id}>
-              <img src={product.img1} alt="" />
-              <div className="description">
-                <h3>{product.title}</h3>
-                <h4>
-                  {product.style} <span>x 1</span>
-                </h4>
-              </div>
-              <h4 className="price">£{product.price / 100}.00</h4>
-              <button id={product.id} onClick={removeCartItem}>
-                X
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      <div className="buttons">
-        <button>View Basket</button>
-        <button>Checkout</button>
-      </div>
+      {cartContent.length > 0 && (
+        <>
+          <ul>
+            {cartContent.map((product) => {
+              return (
+                <li key={product.id}>
+                  <img src={product.img1} alt="" />
+                  <div className="description">
+                    <h3>{product.title}</h3>
+                    <h4>
+                      {product.style} <span>x 1</span>
+                    </h4>
+                  </div>
+                  <h4 className="price">£{product.price / 100}.00</h4>
+                  <button id={product.id} onClick={removeCartItem}>
+                    X
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="buttons">
+            <button>View Basket</button>
+            <button>Checkout</button>
+          </div>
+        </>
+      )}
+      {cartContent.length === 0 && <h5>You have no items in your cart</h5>}
     </StyledCart>
   );
 };
@@ -106,6 +111,11 @@ const StyledCart = styled.div`
     max-height: 100vh;
     height: calc(100vh - 4rem);
     width: 100%;
+  }
+  h5 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
 `;
 

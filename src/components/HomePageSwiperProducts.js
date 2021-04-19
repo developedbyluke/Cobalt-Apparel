@@ -64,10 +64,10 @@ const SectionContainer = styled.div`
   .swiper-container {
     width: 100%;
     height: 100%;
-    padding-right: 2rem;
+    margin-right: 1.5rem;
   }
   .swiper-slide {
-    width: 33%;
+    width: 30%;
   }
 `;
 

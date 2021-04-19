@@ -34,6 +34,9 @@ const HomePageProducts = ({ products }) => {
 
 const HomeProducts = styled.section`
   padding: 0 var(--large-screen-padding);
+  @media screen and (max-width: 1160px) {
+    padding: 0 var(--medium-screen-padding);
+  }
   @media screen and (max-width: 700px) {
     display: none;
   }

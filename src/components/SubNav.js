@@ -68,6 +68,8 @@ const StyledSubNav = styled.div`
   width: 100vw;
   color: black;
   padding: 0 25vw;
+  box-shadow: 0 6px 5px 1px rgba(11, 11, 11, 0.323);
+
   .sub-nav-header {
     font-size: 1.4rem;
     font-weight: 300;

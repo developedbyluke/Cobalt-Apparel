@@ -59,6 +59,9 @@ const Thumbnail = styled(Link)`
     font-weight: 500;
     &:hover {
       color: #02e1f5;
+      @media screen and (max-width: 700px) {
+        color: black;
+      }
     }
     span {
       font-weight: 300;

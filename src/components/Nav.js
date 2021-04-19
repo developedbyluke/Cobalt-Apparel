@@ -21,12 +21,12 @@ const Nav = React.forwardRef(
     const isWindowSizeInMobile = useWindowSize();
     const [shouldNavShow, updateShouldNavShow] = useState(true);
     const navMouseEnter = (e) => {
+      updateNavItemSelected(e.currentTarget.id);
+      if (isWindowSizeInMobile) return;
       const navElementOffset =
         e.currentTarget.offsetLeft + e.currentTarget.offsetWidth / 2;
       ref.current.style.left = `${navElementOffset}px`;
       ref.current.style.opacity = '1';
-      updateNavItemSelected(e.currentTarget.id);
-      if (isWindowSizeInMobile) return;
       updateIsNavActive(true);
     };
 
@@ -111,10 +111,10 @@ const StyledNav = styled.nav`
     top: 4rem;
     left: 0;
     height: calc(100vh - 4rem);
-    background: var(--main-blue);
     display: flex;
     align-items: center;
     width: 100vw;
+    background-color: white;
   }
   position: relative;
   svg {
@@ -132,7 +132,7 @@ const StyledNav = styled.nav`
     height: 4rem;
     @media screen and (max-width: 1160px) {
       flex-direction: column;
-      height: 80%;
+      height: 70%;
       width: 100%;
     }
     li {
@@ -140,6 +140,16 @@ const StyledNav = styled.nav`
       display: flex;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width: 1160px) {
+        align-items: left;
+        justify-content: flex-start;
+        text-align: left;
+        :before {
+          content: '|';
+          color: grey;
+          /* font-size: 0.8rem; */
+        }
+      }
     }
     a {
       display: flex;
@@ -151,8 +161,12 @@ const StyledNav = styled.nav`
       padding: 0 2rem;
       color: white;
       @media screen and (max-width: 1160px) {
-        font-size: 1.4rem;
+        text-align: left;
+        justify-content: flex-start;
+        font-size: 1.8rem;
+        font-weight: 300;
         width: 10rem;
+        color: black;
       }
     }
     li::after {

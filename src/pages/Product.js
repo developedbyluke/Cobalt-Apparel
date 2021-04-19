@@ -40,7 +40,7 @@ const ProductPage = ({ productData, updateCartContent }) => {
             <h3>£{currentProduct.price / 100}.00</h3>
             <p>{currentProduct.style}</p>
             <button
-              className={hasChosenSize ? '' : 'disabled'}
+              className={hasChosenSize ? 'add-to-basket' : 'disabled'}
               onClick={handleAddToBasket}
             >
               {hasChosenSize ? 'Add to basket' : 'Choose a size'}
@@ -118,6 +118,9 @@ const Product = styled.div`
       width: 100%;
       position: relative;
       border: 1px solid #32323222;
+    }
+    .add-to-basket {
+      background-color: var(--main-blue);
     }
     p {
       font-size: 1rem;
