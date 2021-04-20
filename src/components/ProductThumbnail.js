@@ -33,6 +33,8 @@ const ProductThumbnail = ({ product }) => {
 
 const Thumbnail = styled(Link)`
   cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  /* box-shadow: -1px -1px -1px 1px rgba(0, 0, 0, 0.05); */
   * {
     width: 100%;
   }

@@ -1,5 +1,10 @@
 //Import Product Imgs
 
+import qciqen from './img/productimgs/Recommended1.jpeg';
+import skrvwo from './img/productimgs/Recommended2.jpeg';
+import rdnaqb from './img/productimgs/Recommended3.jpeg';
+import ueivah from './img/productimgs/Recommended4.jpg';
+import uudbhg from './img/productimgs/Recommended5.jpg';
 import xlcsjw from './img/productimgs/Latest1.jpg';
 import vdpjgr from './img/productimgs/Latest2.jpg';
 import gfvegy from './img/productimgs/Latest3.jpg';
@@ -48,14 +53,14 @@ export const siteData = {
     {
       img: homeSlider1,
       header: 'Latest Footwear',
-      title: 'Nike SB Janoski',
-      subtitle: 'Aquamarine',
+      title: 'Nike Air Force',
+      subtitle: 'Zebra',
     },
     {
       img: homeSlider2,
       header: 'Latest Footwear',
-      title: 'Adidas 3MC Shoes',
-      subtitle: 'Chalk White',
+      title: 'Adidas',
+      subtitle: '3MC Shoes',
     },
     {
       img: homeSlider3,
@@ -65,9 +70,9 @@ export const siteData = {
     },
     {
       img: homeSlider4,
-      header: 'Sale',
-      title: "Summer '20",
-      subtitle: 'Clearance',
+      header: 'Brands',
+      title: 'Stüssy',
+      subtitle: '',
     },
   ],
   products: [
@@ -91,6 +96,7 @@ export const siteData = {
       url: '/product/xlcsjw',
       brand: 'Nike SB',
       collection: 'shoes/brands/nike sb',
+      homepage: 'latest',
     },
     {
       id: 'vdpjgr',
@@ -102,6 +108,7 @@ export const siteData = {
       url: '/product/vdpjgr',
       brand: 'Nike SB',
       collection: 'clothing/t-shirts/brands/adidas',
+      homepage: 'latest',
     },
     {
       id: 'gfvegy',
@@ -113,6 +120,7 @@ export const siteData = {
       url: '/product/gfvegy',
       brand: 'Nike SB',
       collection: 'clothing/t-shirts/brands/nike sb',
+      homepage: 'latest',
     },
     {
       id: 'eaqvta',
@@ -120,11 +128,11 @@ export const siteData = {
       style: 'Black',
       price: 2500,
       sizes: ['S', 'M', 'L', 'XL'],
-
       img1: eaqvta,
       url: '/product/eaqvta',
       brand: 'Nike SB',
       collection: 'clothing/t-shirts/brands/nike sb',
+      homepage: 'latest',
     },
     {
       id: 'fmdujh',
@@ -136,6 +144,68 @@ export const siteData = {
       url: '/product/fmdujh',
       brand: 'Nike SB',
       collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'latest',
+    },
+    {
+      id: 'qciqen',
+      title: 'Nike SB YD Stripe T-Shirt',
+      style: 'Dark Smoke Grey',
+      price: 2500,
+      sizes: ['S', 'M', 'L', 'XL'],
+      img1: qciqen,
+      url: '/product/qciqen',
+      brand: 'Nike SB',
+      collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'recommended',
+    },
+
+    {
+      id: 'skrvwo',
+      title: 'Nike SB YD Stripe T-Shirt',
+      style: 'Dark Smoke Grey',
+      price: 2500,
+      sizes: ['S', 'M', 'L', 'XL'],
+      img1: skrvwo,
+      url: '/product/skrvwo',
+      brand: 'Nike SB',
+      collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'recommended',
+    },
+    {
+      id: 'rdnaqb',
+      title: 'Nike SB YD Stripe T-Shirt',
+      style: 'Dark Smoke Grey',
+      price: 2500,
+      sizes: ['S', 'M', 'L', 'XL'],
+      img1: rdnaqb,
+      url: '/product/rdnaqb',
+      brand: 'Nike SB',
+      collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'recommended',
+    },
+    {
+      id: 'ueivah',
+      title: 'Nike SB YD Stripe T-Shirt',
+      style: 'Dark Smoke Grey',
+      price: 2500,
+      sizes: ['S', 'M', 'L', 'XL'],
+      img1: ueivah,
+      url: '/product/ueivah',
+      brand: 'Nike SB',
+      collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'recommended',
+    },
+    {
+      id: 'uudbhg',
+      title: 'Nike SB YD Stripe T-Shirt',
+      style: 'Dark Smoke Grey',
+      price: 2500,
+      sizes: ['S', 'M', 'L', 'XL'],
+      img1: uudbhg,
+      url: '/product/uudbhg',
+      brand: 'Nike SB',
+      collection: 'clothing/t-shirts/brands/rvca',
+      homepage: 'recommended',
     },
   ],
 };

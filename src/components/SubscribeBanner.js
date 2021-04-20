@@ -7,7 +7,7 @@ const SubscribeBanner = () => {
     <StyledBanner>
       <img src={BannerImg} alt="" />
       <div className="text-container">
-        <h2>Subscribe to our newsletter for 20% off your first order</h2>
+        <h2>Subscribe to our newsletter for 20% off your first order.</h2>
         <form action="">
           <input type="Email" placeholder="Email.." />
           <button type="Submit">Submit</button>
@@ -35,9 +35,9 @@ const StyledBanner = styled.div`
     z-index: -1;
   }
   .text-container {
+    width: 40%;
     @media screen and (max-width: 1250px) {
       width: 100%;
-
       button {
         background: white;
         height: 1.9rem;
@@ -51,7 +51,7 @@ const StyledBanner = styled.div`
     padding: 2rem;
     color: white;
     background: black;
-    width: 30%;
+    /* width: 30%; */
     form {
       display: flex;
       align-items: center;

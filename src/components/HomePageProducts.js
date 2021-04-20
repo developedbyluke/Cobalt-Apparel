@@ -12,18 +12,22 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="latest">
             <h4 className="product-section-header">Latest</h4>
             <div className="product-list">
-              {products.map((product, i) => (
-                <ProductThumbnail key={i} product={product} />
-              ))}
+              {products
+                .filter((product) => product.homepage === 'latest')
+                .map((product, i) => (
+                  <ProductThumbnail key={i} product={product} />
+                ))}
             </div>
           </SectionContainer>
 
           <SectionContainer className="recommended">
             <h4 className="product-section-header">Recommended</h4>
             <div className="product-list">
-              {products.map((product, i) => (
-                <ProductThumbnail key={i} product={product} />
-              ))}
+              {products
+                .filter((product) => product.homepage === 'recommended')
+                .map((product, i) => (
+                  <ProductThumbnail key={i} product={product} />
+                ))}
             </div>
           </SectionContainer>
         </HomeProducts>

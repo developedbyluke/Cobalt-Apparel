@@ -46,7 +46,10 @@ const Container = styled.div`
   top: 6rem;
   width: 100%;
   min-height: 100vh;
-  padding: 0 3rem;
+  padding: 0 var(--large-screen-padding);
+  @media screen and (max-width: 1160px) {
+    padding: 0 var(--medium-screen-padding);
+  }
   @media screen and (max-width: 750px) {
     padding: 2rem;
     top: 2rem;
