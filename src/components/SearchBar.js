@@ -8,7 +8,7 @@ const SearchBar = ({ isSearchBarActive }) => {
       method="get"
       className={isSearchBarActive ? 'show' : 'hide'}
     >
-      <input type="text" autoFocus></input>
+      <input type="text" autoFocus="true"></input>
       <button className="material-icons">search</button>
     </StyledForm>
   );
@@ -17,9 +17,10 @@ const StyledForm = styled.form`
   /* box-shadow: 0px 2px 6px rgb(100, 100, 100); */
   border: 1px solid grey;
   position: absolute;
-  top: 4rem;
-  right: 0;
-  height: 2rem;
+  top: 50vh;
+  right: 50vw;
+  transform: translate(50%, -50%);
+  height: 5rem;
   transition: right 0.5s ease;
   display: flex;
   width: 50%;
@@ -28,7 +29,7 @@ const StyledForm = styled.form`
     height: 100%;
     margin: 0;
     outline: none;
-    font-size: 1rem;
+    font-size: 2rem;
     border: none;
     width: 100%;
     padding: 0rem 0.5rem;
@@ -39,7 +40,7 @@ const StyledForm = styled.form`
   button {
     height: 100%;
     border: none;
-    width: 5rem;
+    width: 6rem;
     color: white;
     background-color: rgba(0, 0, 0, 0.783);
     &:hover {

@@ -21,6 +21,9 @@
   left: 0;
   top: 0;
 }
+.blur {
+  filter: blur(2px) brightness(40%);
+}
 
 .swiper-pagination-bullet {
   background-color: white !important;

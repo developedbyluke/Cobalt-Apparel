@@ -9,6 +9,8 @@ const NavButtons = ({
   isSearchBarActive,
   isCartActive,
   cartContent,
+  updateIsNavButtonActive,
+  isNavButtonActive,
 }) => {
   return (
     <Buttons>
@@ -27,19 +29,26 @@ const NavButtons = ({
       </div>
       {/* Search Bar Btn */}
       <div
-        className="search-button nav-button"
+        className={
+          isSearchBarActive
+            ? 'nav-button-active search-button nav-button'
+            : 'search-button nav-button'
+        }
         onClick={() => {
           updateIsCartActive(false);
+          updateIsMobileNavActive(false);
           updateIsSearchBarActive(!isSearchBarActive);
+          updateIsNavButtonActive(!isNavButtonActive);
         }}
       >
         <span className="icon material-icons">search</span>
       </div>
       {/* Shopping Cart Btn */}
       <div
-        className="nav-button"
+        className={isCartActive ? 'nav-button-active nav-button' : 'nav-button'}
         onClick={() => {
           updateIsSearchBarActive(false);
+          updateIsMobileNavActive(false);
           updateIsCartActive(!isCartActive);
         }}
       >
@@ -50,10 +59,14 @@ const NavButtons = ({
       </div>
       {/* Nav Burger */}
       <div
-        className="menu-bar nav-button"
+        className={
+          isMobileNavActive
+            ? 'nav-button-active menu-bar nav-button'
+            : 'menu-bar nav-button'
+        }
         onClick={() => {
           updateIsSearchBarActive(false);
-          // updateIsCartActive(!isCartActive);
+          updateIsCartActive(false);
           updateIsMobileNavActive(!isMobileNavActive);
         }}
       >
@@ -98,11 +111,16 @@ const Buttons = styled.div`
     }
   }
   .nav-button {
+    filter: blur(0) brightness(100%);
     &:hover {
       color: var(--main-blue);
     }
   }
+
   .cart-counter {
+    color: var(--main-blue);
+  }
+  .nav-button-active {
     color: var(--main-blue);
   }
 `;

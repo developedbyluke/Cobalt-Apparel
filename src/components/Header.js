@@ -16,6 +16,8 @@ const Header = ({
   updateCollection,
   updateIsNavActive,
   isNavActive,
+  isNavButtonActive,
+  updateIsNavButtonActive,
 }) => {
   const history = useHistory();
 
@@ -58,6 +60,8 @@ const Header = ({
         isSearchBarActive={isSearchBarActive}
         isCartActive={isCartActive}
         cartContent={cartContent}
+        updateIsNavButtonActive={updateIsNavButtonActive}
+        isNavButtonActive={isNavButtonActive}
       />
       <SearchBar isSearchBarActive={isSearchBarActive} />
       <Cart

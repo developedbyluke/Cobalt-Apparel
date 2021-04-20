@@ -12,32 +12,40 @@ const HomePageProducts = ({ products }) => {
           <SectionContainer className="latest">
             <h4 className="product-section-header">Latest </h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={20} slidesPerView="auto">
-              {products.map((product, i) => (
-                <SwiperSlide key={i}>
-                  <div className="slide-container">
-                    <ProductThumbnail className="x" key={i} product={product} />
-                  </div>
-                </SwiperSlide>
-              ))}
+            <Swiper className="Swiper" spaceBetween={5} slidesPerView="auto">
+              {products
+                .filter((product) => product.homepage === 'latest')
+                .map((product, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="slide-container">
+                      <ProductThumbnail
+                        className="x"
+                        key={i}
+                        product={product}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </SectionContainer>
 
           <SectionContainer className="recommended">
             <h4 className="product-section-header">Recommended</h4>
             {/* Hides unless app is in mobile view */}
-            <Swiper className="Swiper" spaceBetween={20} slidesPerView="auto">
-              {products.map((product, i) => (
-                <SwiperSlide key={i}>
-                  <div className="slide-container">
-                    <ProductThumbnail
-                      className="TN"
-                      key={i}
-                      product={product}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
+            <Swiper className="Swiper" spaceBetween={5} slidesPerView="auto">
+              {products
+                .filter((product) => product.homepage === 'recommended')
+                .map((product, i) => (
+                  <SwiperSlide key={i}>
+                    <div className="slide-container">
+                      <ProductThumbnail
+                        className="TN"
+                        key={i}
+                        product={product}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
             </Swiper>
           </SectionContainer>
         </HomeProducts>
