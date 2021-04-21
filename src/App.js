@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartContent));
   }, [cartContent]);
-  console.log(isNavButtonActive);
+
   return (
     <Router>
       {/* <ScrollToTop /> */}

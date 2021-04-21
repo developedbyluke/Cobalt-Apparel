@@ -50,7 +50,6 @@ const Nav = React.forwardRef(
         updateShouldNavShow(false);
     }, [isMobileNavActive, isWindowSizeInMobile]);
 
-    console.log({ isMobileNavActive });
     return (
       <StyledNav
         onMouseLeave={navMouseLeave}

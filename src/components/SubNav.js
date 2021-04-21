@@ -19,10 +19,6 @@ const SubNav = React.forwardRef(
       updateIsNavActive(false);
     };
 
-    useEffect(() => {
-      console.log(window.innerWidth);
-    }, [window.innerWidth]);
-
     return (
       <StyledSubNav
         onMouseLeave={subNavMouseLeave}

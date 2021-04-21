@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const SearchBar = ({ isSearchBarActive }) => {
+  const SearchBarRef = useRef();
+  useEffect(() => {
+    console.log(SearchBarRef);
+    if (isSearchBarActive) {
+      SearchBarRef.current[0].focus();
+    }
+  }, [isSearchBarActive]);
   return (
     <StyledForm
+      ref={SearchBarRef}
       action=""
       method="get"
       className={isSearchBarActive ? 'show' : 'hide'}
     >
-      <input type="text" autoFocus="true"></input>
+      <input type="text" autoFocus={true} placeholder="Search"></input>
       <button className="material-icons">search</button>
     </StyledForm>
   );
 };
 const StyledForm = styled.form`
-  /* box-shadow: 0px 2px 6px rgb(100, 100, 100); */
   border: 1px solid grey;
   position: absolute;
-  top: 50vh;
+  top: 40vh;
   right: 50vw;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -60%);
   height: 5rem;
   transition: right 0.5s ease;
   display: flex;
