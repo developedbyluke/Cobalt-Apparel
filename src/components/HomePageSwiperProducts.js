@@ -18,11 +18,7 @@ const HomePageProducts = ({ products }) => {
                 .map((product, i) => (
                   <SwiperSlide key={i}>
                     <div className="slide-container">
-                      <ProductThumbnail
-                        className="x"
-                        key={i}
-                        product={product}
-                      />
+                      <ProductThumbnail key={i} product={product} />
                     </div>
                   </SwiperSlide>
                 ))}
@@ -38,11 +34,7 @@ const HomePageProducts = ({ products }) => {
                 .map((product, i) => (
                   <SwiperSlide key={i}>
                     <div className="slide-container">
-                      <ProductThumbnail
-                        className="TN"
-                        key={i}
-                        product={product}
-                      />
+                      <ProductThumbnail key={i} product={product} />
                     </div>
                   </SwiperSlide>
                 ))}

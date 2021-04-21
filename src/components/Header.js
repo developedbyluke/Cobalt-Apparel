@@ -63,7 +63,11 @@ const Header = ({
         updateIsNavButtonActive={updateIsNavButtonActive}
         isNavButtonActive={isNavButtonActive}
       />
-      <SearchBar isSearchBarActive={isSearchBarActive} />
+      <SearchBar
+        isSearchBarActive={isSearchBarActive}
+        updateCollection={updateCollection}
+        updateIsSearchBarActive={updateIsSearchBarActive}
+      />
       <Cart
         isCartActive={isCartActive}
         updateCartContent={updateCartContent}

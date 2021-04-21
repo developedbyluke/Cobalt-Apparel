@@ -1,27 +1,53 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router';
 
-const SearchBar = ({ isSearchBarActive }) => {
+const SearchBar = ({
+  isSearchBarActive,
+  updateCollection,
+  updateIsSearchBarActive,
+}) => {
   const SearchBarRef = useRef();
+  const [redirect, updateRedirect] = useState(false);
+
   useEffect(() => {
     console.log(SearchBarRef);
     if (isSearchBarActive) {
       SearchBarRef.current[0].focus();
     }
+    // updateRedirect(false);
   }, [isSearchBarActive]);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const searchQuery = e.target.input.value;
+    console.log(searchQuery);
+    updateCollection(`/collection/${searchQuery}`);
+    updateRedirect(true);
+    updateIsSearchBarActive(false);
+  };
+
   return (
     <StyledForm
       ref={SearchBarRef}
       action=""
       method="get"
       className={isSearchBarActive ? 'show' : 'hide'}
+      onSubmit={handleFormSubmit}
     >
-      <input type="text" autoFocus={true} placeholder="Search"></input>
+      {redirect ? <Redirect to="/collection/brands/Adidas" /> : null}
+      <input
+        name="input"
+        type="text"
+        autoFocus={true}
+        placeholder="Search"
+      ></input>
       <button className="material-icons">search</button>
     </StyledForm>
   );
 };
 const StyledForm = styled.form`
+  box-shadow: 0 0 4px 2px grey;
   border: 1px solid grey;
   position: absolute;
   top: 40vh;
