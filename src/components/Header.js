@@ -7,6 +7,7 @@ import SubNav from '../components/SubNav';
 import '../styles/headerToggleClasses.scss';
 import Cart from './Cart';
 import { Link, useHistory } from 'react-router-dom';
+const yo = 'yo;';
 
 const Header = ({
   navData,
