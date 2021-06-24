@@ -10,6 +10,7 @@ const CollectionPage = ({ productData, collection, updateIsNavActive }) => {
   const history = useHistory();
   const url = history.location.pathname;
   const x = url.split('/');
+
   useEffect(() => {
     const CollectionFilter = (collection, secondFilter) => {
       updateIsNavActive(false);

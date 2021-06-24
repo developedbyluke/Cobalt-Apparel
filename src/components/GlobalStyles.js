@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --Nav-Black: black;
 }
 body{
     font-family: 'Poppins', sans-serif;

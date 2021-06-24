@@ -6,6 +6,7 @@ const SearchBar = ({
   isSearchBarActive,
   updateCollection,
   updateIsSearchBarActive,
+  updateIsNavButtonActive,
 }) => {
   const SearchBarRef = useRef();
   const [redirect, updateRedirect] = useState(false);
@@ -25,6 +26,7 @@ const SearchBar = ({
     updateCollection(`/collection/${searchQuery}`);
     updateRedirect(true);
     updateIsSearchBarActive(false);
+    updateIsNavButtonActive(false);
   };
 
   return (
@@ -35,7 +37,7 @@ const SearchBar = ({
       className={isSearchBarActive ? 'show' : 'hide'}
       onSubmit={handleFormSubmit}
     >
-      {redirect ? <Redirect to="/collection/brands/Adidas" /> : null}
+      {redirect ? <Redirect to="/collection/brands/Nike" /> : null}
       <input
         name="input"
         type="text"
@@ -47,10 +49,10 @@ const SearchBar = ({
   );
 };
 const StyledForm = styled.form`
-  box-shadow: 0 0 4px 2px grey;
+  box-shadow: 0 0 4px 1px grey;
   border: 1px solid grey;
   position: absolute;
-  top: 40vh;
+  top: 8rem;
   right: 50vw;
   transform: translate(50%, -60%);
   height: 5rem;
@@ -58,7 +60,7 @@ const StyledForm = styled.form`
   display: flex;
   width: 50%;
   input {
-    background-color: rgba(0, 0, 0, 0.783);
+    background-color: rgba(0, 0, 0, 0.8);
     height: 100%;
     margin: 0;
     outline: none;

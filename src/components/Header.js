@@ -7,7 +7,6 @@ import SubNav from '../components/SubNav';
 import '../styles/headerToggleClasses.scss';
 import Cart from './Cart';
 import { Link, useHistory } from 'react-router-dom';
-const yo = 'yo;';
 
 const Header = ({
   navData,
@@ -68,6 +67,7 @@ const Header = ({
         isSearchBarActive={isSearchBarActive}
         updateCollection={updateCollection}
         updateIsSearchBarActive={updateIsSearchBarActive}
+        updateIsNavButtonActive={updateIsNavButtonActive}
       />
       <Cart
         isCartActive={isCartActive}
@@ -93,7 +93,7 @@ const StyledHeader = styled.header`
   z-index: 2;
   position: fixed;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.88);
   height: 4rem;
   display: flex;
   align-items: center;

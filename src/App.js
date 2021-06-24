@@ -9,10 +9,12 @@ import CollectionPage from './pages/Collection';
 import ScrollToTop from './components/ScrollToTop';
 import Delivery from './components/Delivery';
 import './styles/swiperStyles.scss';
+import { createStore } from 'redux';
+import styled from 'styled-components';
 
 function App() {
-  const cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
   const [siteState, updateSiteState] = useState(siteData);
+  const cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
   const [cartContent, updateCartContent] = useState(cartStorage);
   const [collection, updateCollection] = useState(null);
   const [isNavActive, updateIsNavActive] = useState(false);
@@ -38,30 +40,28 @@ function App() {
           updateIsNavButtonActive={updateIsNavButtonActive}
           isNavButtonActive={isNavButtonActive}
         />
-        <div className={isNavButtonActive ? 'blur' : ''}>
-          <Switch>
-            <Route path="/" exact>
-              <Home
-                sliderData={siteState.slider}
-                productData={siteState.products}
-              />
-            </Route>
-            <Route path="/product/:id">
-              <ProductPage
-                productData={siteState.products}
-                updateCartContent={updateCartContent}
-              />
-            </Route>
-            <Route path="/collection/:id">
-              <CollectionPage
-                updateIsNavActive={updateIsNavActive}
-                collection={collection}
-                productData={siteState.products}
-                updateCartContent={updateCartContent}
-              />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/" exact>
+            <Home
+              sliderData={siteState.slider}
+              productData={siteState.products}
+            />
+          </Route>
+          <Route path="/product/:id">
+            <ProductPage
+              productData={siteState.products}
+              updateCartContent={updateCartContent}
+            />
+          </Route>
+          <Route path="/collection/:id">
+            <CollectionPage
+              updateIsNavActive={updateIsNavActive}
+              collection={collection}
+              productData={siteState.products}
+              updateCartContent={updateCartContent}
+            />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
